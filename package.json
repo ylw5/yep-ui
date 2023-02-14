@@ -8,6 +8,7 @@
     "build": "vite build && vue-tsc",
     "serve": "vite preview"
   },
+  "files": ["dist"],
   "dependencies": {
     "@popperjs/core": "^2.11.6",
     "date-fns": "^2.29.3",
