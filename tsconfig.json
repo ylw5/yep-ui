@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "outDir": "dist",
+    "target": "ES2018",
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "sourceMap": true,
+    "baseUrl": "./",
+    "strict": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": false,
+    "types": ["vite/client"],
+    "lib": ["DOM", "ESNext", "DOM.Iterable"],
+    "isolatedModules": true,
+    "skipLibCheck": true,
+    "allowJs": true
+  },
+  "include": ["src", "shims-vue.d.ts", "env.d.ts"],
+  "exclude": ["node_modules", "dist"]
+
+}
