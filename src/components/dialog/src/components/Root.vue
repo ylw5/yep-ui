@@ -13,7 +13,7 @@ const emit = defineEmits<{
   (e: 'beforeClose'): void
   (e: 'update:modelValue', value: boolean): void
 }>()
-const dialog = ref<HTMLDialogElement | null>()
+const dialog = ref<HTMLDialogElement | null>(null)
 
 function closeDialog() {
   emit('update:modelValue', false)
@@ -31,7 +31,7 @@ onMounted(() => {
   watch(
     () => props.modelValue,
     (open) => {
-      if (dialog.value.open === open)
+      if (dialog.value?.open === open)
         return
 
       if (!open)
@@ -51,8 +51,6 @@ useOutsideClick(
       return
 
     closeDialog()
-    // event.stopPropagation()
-    // event.preventDefault()
   },
   computed(() => props.modelValue),
 )

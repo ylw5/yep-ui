@@ -1,6 +1,5 @@
 <script setup lang="ts">
-import type { Ref } from 'vue'
-import { computed, ref } from 'vue'
+import { computed, ref, shallowRef } from 'vue'
 import type { StateDefinition } from '../type'
 import { useId } from '../composables/use-checkbox-id'
 import { provideCheckboxContext } from '../composables/use-checkbox-context'
@@ -16,7 +15,7 @@ const props = withDefaults(defineProps<{
 })
 const emits = defineEmits(['update:modelValue', 'change'])
 
-const indicator = ref<StateDefinition['indicator']['value']>()
+const indicator = shallowRef<StateDefinition['indicator']['value']>(null)
 
 const groupContext = useGroupContext('root')
 
@@ -24,7 +23,7 @@ const checkboxState = ref<StateDefinition['checkboxState']['value']>(props.model
 
 const api: StateDefinition = {
   value: props.value,
-  disabled: props.disabled,
+  disabled: props.disabled || false,
   checkboxState: computed(() => {
     if (groupContext)
       return groupContext.values?.value.slice().includes(props.value ?? '')
@@ -54,8 +53,8 @@ const state = computed(() => {
   return stateArr.join(' ')
 })
 
-function handleChange(event: Event & { target: HTMLInputElement }) {
-  api.select(event.target.checked)
+function handleChange(event: Event) {
+  api.select((event.target as HTMLInputElement).checked)
   emits('change', event)
 }
 </script>

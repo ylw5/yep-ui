@@ -16,7 +16,7 @@ export function useOutsideClick(
 
     for (const container of containers) {
       // dialog on the top-layer, so we need to check if the click is in the dialog
-      if (container.value.tagName === 'DIALOG') {
+      if (container.value?.tagName === 'DIALOG') {
         const rect = container.value.getBoundingClientRect()
         const isInDialog
           = rect.top <= e.clientY
@@ -28,7 +28,7 @@ export function useOutsideClick(
           return
       }
       else {
-        if (container.value.contains(target as Node))
+        if (container.value?.contains(target as Node))
           return
       }
     }

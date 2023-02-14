@@ -1,5 +1,6 @@
 {
   "name": "yep-ui",
+  "type": "module",
   "version": "0.0.1",
   "main": "dist/yep-ui.mjs",
   "module": "dist/yep-ui.mjs",
@@ -9,7 +10,6 @@
     "build": "vite build && vue-tsc",
     "serve": "vite preview"
   },
-  "files": ["dist"],
   "dependencies": {
     "@popperjs/core": "^2.11.6",
     "date-fns": "^2.29.3",

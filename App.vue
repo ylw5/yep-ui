@@ -1,20 +1,21 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-// import { ElButton, ElInput } from 'element-plus'
+
+// import { PopperRoot } from './dist/yep-ui.js'
 import myPopover from './src/components/popper/story/Baisc.vue'
-import * as myPopover2 from './src/components/popper'
-import { Popper } from './dist/yep-ui.mjs'
+import { PopperRoot } from './src'
 </script>
 
 <template>
-  <Popper.Root>
+  <PopperRoot trigger="click" />
+  <!-- <Popper.Root>
     <Popper.Trigger>
       Trigger
     </Popper.Trigger>
     <Popper.Panel class="popper-panel">
       <div>Content</div>
     </Popper.Panel>
-  </Popper.Root>
+  </Popper.Root> -->
 </template>
 
 <style>

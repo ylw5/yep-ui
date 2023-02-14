@@ -12,7 +12,7 @@ const api = useCheckboxContext('Indicator')
   >
 
     <slot
-      v-if="api.checkboxState.value"
+      v-if="api?.checkboxState.value"
     />
   </span>
 </template>

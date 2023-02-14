@@ -78,7 +78,7 @@ useOutsideClick(
     api.closeOptions()
     if (isInFocusableElement(target)) {
       event.preventDefault()
-      triggerRef.value.focus()
+      triggerRef.value?.focus()
     }
   },
   computed(() => api.isOptionsOpen.value === true),

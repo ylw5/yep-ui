@@ -20,7 +20,7 @@ export interface StateDefinition {
   value?: string
   disabled: boolean
   checkboxState: Ref<boolean>
-  indicator: Ref<indicatorData>
+  indicator: Ref<indicatorData | null>
 
   // Methods
   select: (value: boolean) => void

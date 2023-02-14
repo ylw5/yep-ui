@@ -2,7 +2,6 @@
 import type { Component } from 'vue'
 import { onMounted } from 'vue'
 import { usePopperContext } from '../composables/use-popper-context'
-
 const props = withDefaults(defineProps<{
   as?: string | Component
 }>(), {
