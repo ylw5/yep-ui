@@ -1,7 +1,7 @@
 {
   "name": "yep-ui",
   "type": "module",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "main": "dist/yep-ui.js",
   "module": "dist/yep-ui.js",
   "typings": "dist/src/index.d.ts",
