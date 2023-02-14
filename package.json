@@ -2,9 +2,9 @@
   "name": "yep-ui",
   "type": "module",
   "version": "0.0.2",
-  "main": "dist/yep-ui.mjs",
-  "module": "dist/yep-ui.mjs",
-  "typings": "dist/index.d.ts",
+  "main": "dist/yep-ui.js",
+  "module": "dist/yep-ui.js",
+  "typings": "dist/src/index.d.ts",
   "scripts": {
     "dev": "vite",
     "build": "vite build && vue-tsc",
