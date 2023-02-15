@@ -1,0 +1,13 @@
+{
+  "name": "@yep-ui/docs",
+  "private": true,
+  "scripts": {
+    "dev": "vitepress dev .",
+    "build": "vitepress build ."
+  },
+  "devDependencies": {
+    "vite": "^4.1.1",
+    "vitepress": "1.0.0-alpha.46",
+    "vue": "^3.2.47"
+  }
+}

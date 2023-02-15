@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 
-// import { PopperRoot } from './dist/yep-ui.js'
+import { checkRoot } from './dist/yep-ui.js'
 import myPopover from './src/components/popper/story/Baisc.vue'
 import { PopperRoot } from './src'
 </script>
