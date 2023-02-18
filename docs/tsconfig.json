@@ -14,9 +14,9 @@
       "yep-ui": ["../packages/yep-ui"],
       "~/*": ["./.vitepress/vitepress/*"]
     },
-    "types": ["../typings/components"],
+    // "types": ["../typings/components"],
     "jsx": "preserve"
   },
-  "include": ["**/*", ".vitepress/**/*"],
+  "include": ["**/*", ".vitepress/**/*", "vite.config.ts"],
   "exclude": ["node_modules"]
 }

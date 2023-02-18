@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { ref } from 'vue'
-import Anchor from '../src/components/Anchor.vue'
 import Close from '../src/components/Close.vue'
 import Panel from '../src/components/Panel.vue'
 import Root from '../src/components/Root.vue'

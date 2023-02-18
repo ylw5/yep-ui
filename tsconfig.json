@@ -6,7 +6,7 @@
     "isolatedModules": true,
     "skipLibCheck": true
   },
-  "include": ["packages"],
+  "include": ["packages", "App.vue"],
   "exclude": [
     "node_modules",
     "**/dist",

@@ -6,10 +6,10 @@
   ],
   "scripts": {
     "dev": "vite",
-    "build": "vite build && vue-tsc",
+    "build": "vite build && vue-tsc --declaration --emitDeclarationOnly`",
     "serve": "vite preview",
-    "docs:dev": "vitepress dev docs",
-    "docs:build": "vitepress build docs",
+    "docs:dev": "pnpm run -C docs dev",
+    "docs:build": "pnpm run -C docs build",
     "tsupbuild": "vue-tsc --noEmit && tsup src/index.ts --dts --format esm,cjs --external vue"
   },
   "dependencies": {
@@ -28,7 +28,6 @@
     "tsup": "^6.6.3",
     "typescript": "^4.9.4",
     "unocss": "^0.48.4",
-    "vite": "^4.0.4",
     "vue": "^3.2.45",
     "vue-tsc": "^1.0.24"
   },
