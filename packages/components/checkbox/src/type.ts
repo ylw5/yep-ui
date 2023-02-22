@@ -1,24 +1,23 @@
 import type { Ref } from 'vue'
 interface indicatorData {
-  id: string
+  id?: string
   domRef: Ref<HTMLElement | null>
   disabled?: boolean
 }
 export interface GroupStateDefinition {
   // State
   values: Ref<string[]>
-  /*
-    TODO:set the range of the number of selected items
-    min:number
-    max:number
-  */
+  selectCount: Ref<number>
+  max?: number
+  min?: number
   // Methods
   select(state: boolean, value: string): void
 }
+
 export interface StateDefinition {
   // State
-  value?: string
-  disabled: boolean
+  value: Ref<string | null>
+  disabled: Ref<boolean>
   checkboxState: Ref<boolean>
   indicator: Ref<indicatorData | null>
 

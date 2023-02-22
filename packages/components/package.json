@@ -1,3 +1,10 @@
 {
-  "name": "@yep-ui/components"
+  "name": "@yep-ui/components",
+  "private": true,
+  "sideEffects": false,
+  "main": "index.ts",
+  "module": "index.ts",
+  "peerDependencies": {
+    "vue": "^3.2.0"
+  }
 }

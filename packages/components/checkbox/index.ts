@@ -1,3 +1,8 @@
-export { default as CheckboxIndicator } from './src/components/Indicator.vue'
-export { default as checkRoot } from './src/components/Root.vue'
-export { default as CheckboxGroup } from './src/components/Group.vue'
+import Root from './src/components/Root.vue'
+import Indicatior from './src/components/Indicator.vue'
+import Group from './src/components/Group.vue'
+export default {
+  Root,
+  Indicatior,
+  Group,
+}

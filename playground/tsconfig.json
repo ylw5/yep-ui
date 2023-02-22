@@ -1,0 +1,10 @@
+{
+  // "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "isolatedModules": true,
+    "types": ["vite/client"]
+  },
+  "include": ["**/*.ts", "*.vue"],
+  "exclude": ["node_modules"]
+}

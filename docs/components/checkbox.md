@@ -2,7 +2,13 @@
 
 复选框
 
-:::demo
+:::demo aa
 Basic.vue
 GroupCheck.vue
 :::
+
+::: spoiler click me
+content
+:::
+
+content

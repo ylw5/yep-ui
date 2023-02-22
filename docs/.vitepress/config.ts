@@ -1,4 +1,5 @@
 import { defineConfig } from 'vitepress'
+import Container from 'markdown-it-container'
 export default defineConfig({
   title: 'Yep UI',
   description: 'A Vue 3 UI Library',
@@ -43,6 +44,34 @@ export default defineConfig({
           ],
         },
       ],
+    },
+  },
+  markdown: {
+    config: (md) => {
+      md.use(Container, 'card', {
+        render: (tokens, idx) => {
+          const token = tokens[idx]
+
+          // console.log('token :>> ', token)
+
+          const title = token.info.trim().slice(5).trim()
+
+          const titleHtml = md.render(`## ${title}`)
+
+          return token.nesting === 1 ? `<Demo>${titleHtml}` : '</Demo>\n'
+        },
+      })
+
+      md.use(Container, 'code', {
+        render: (tokens, idx) => {
+          const token = tokens[idx]
+
+          // console.log('token :>> ', token)
+          const demoName = token.info.trim().slice(5).trim()
+
+          return token.nesting === 1 ? `<template #demo><${demoName} /></template><template #code>` : '</template>\n'
+        },
+      })
     },
   },
 })

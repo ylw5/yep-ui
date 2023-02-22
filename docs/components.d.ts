@@ -9,23 +9,6 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
-    Anchor: typeof import('./../packages/components/popper/src/components/Anchor.vue')['default']
-    Baisc: typeof import('./../packages/components/popper/story/Baisc.vue')['default']
-    Basic: typeof import('./../packages/components/dialog/story/Basic.vue')['default']
-    ButtonTrigger: typeof import('./../packages/components/select/story/ButtonTrigger.vue')['default']
-    Close: typeof import('./../packages/components/popper/src/components/Close.vue')['default']
-    DatePicker: typeof import('./../packages/components/date-picker/src/date-picker.vue')['default']
-    Group: typeof import('./../packages/components/checkbox/src/components/Group.vue')['default']
-    GroupCheckbox: typeof import('./../packages/components/checkbox/story/GroupCheckbox.vue')['default']
-    GroupOptions: typeof import('./../packages/components/select/story/GroupOptions.vue')['default']
-    Indicator: typeof import('./../packages/components/checkbox/src/components/Indicator.vue')['default']
-    Input: typeof import('./../packages/components/select/story/Input.vue')['default']
-    Label: typeof import('./../packages/components/select/src/components/Label.vue')['default']
-    Option: typeof import('./../packages/components/select/src/components/Option.vue')['default']
-    Options: typeof import('./../packages/components/select/src/components/Options.vue')['default']
-    Panel: typeof import('./../packages/components/popper/src/components/Panel.vue')['default']
-    PanelArrow: typeof import('./../packages/components/popper/src/components/PanelArrow.vue')['default']
-    Root: typeof import('./../packages/components/select/src/components/Root.vue')['default']
-    Trigger: typeof import('./../packages/components/select/src/components/Trigger.vue')['default']
+    ButtonBasic: typeof import('./story/button/ButtonBasic.vue')['default']
   }
 }

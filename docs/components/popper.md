@@ -1,10 +1,9 @@
 # 弹出
 
-<PopperRoot trigger="click">
-  <PopperTrigger>
-    <button>click me</button>
-  </PopperTrigger>
-  <PopperPanel>
-    <div>hello</div>
-  </PopperPanel>
-</PopperRoot>
+
+
+:::card 默认按键
+:::code 
+<<< ../packages/components/popper/story/Basic.vue 
+:::
+

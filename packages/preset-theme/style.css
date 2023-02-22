@@ -1,0 +1,29 @@
+*,
+*::before,
+*::after{
+  box-sizing: border-box;
+}
+:root{
+  --y-primary: #60a5fa;
+  --y-success: #67C23A;
+  --y-danger: #F56C6C;
+  --y-warning: #E6A23C;
+  --y-info: #909399;
+  --y-border-color: #dcdfe6;
+}
+:root.dark{
+  --y-primary: #409EFF;
+  --y-success: #67C23A;
+  --y-danger: #F56C6C;
+  --y-warning: #E6A23C;
+  --y-info: #909399;
+
+  --y-border-color: #4C4D4F;
+}
+
+[data-state~="diabled"],
+[aria-disabled="true"],
+[disabled]{
+  cursor: not-allowed;
+  opacity: 10;
+}
