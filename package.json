@@ -9,10 +9,13 @@
     "play": "pnpm -C playground run dev",
     "stub": "pnpm -r --filter=./packages/* --parallel run stub"
   },
+  "peerDependencies": {
+    "vue": "^3.2.0"
+  },
   "dependencies": {
     "@popperjs/core": "^2.11.6",
     "@yep-ui/components": "workspace:*",
-    "@yep-ui/hooks": "wokspace:*",
+    "@yep-ui/hooks": "workspace:*",
     "@yep-ui/playground": "workspace:*",
     "@yep-ui/preset-theme": "workspace:*",
     "date-fns": "^2.29.3"

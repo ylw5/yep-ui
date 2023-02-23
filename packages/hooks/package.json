@@ -1,9 +1,12 @@
 {
   "name": "@yep-ui/hooks",
-  "type": "module",
   "version": "0.0.0",
   "private": true,
-  "sideeffects": false,
+  "description": "Yep UI composables",
   "main": "index.ts",
-  "module": "index.ts"
+  "module": "index.ts",
+  "types": "index.d.ts",
+  "peerDependencies": {
+    "vue": "^3.2.0"
+  }
 }
