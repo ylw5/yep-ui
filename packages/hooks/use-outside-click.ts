@@ -13,7 +13,7 @@ export function useOutsideClick(
 
     if (!target)
       return
-
+    // FIXME: order close nest dialog
     for (const container of containers) {
       // dialog on the top-layer, so we need to check if the click is in the dialog
       if (container.value?.tagName === 'DIALOG') {

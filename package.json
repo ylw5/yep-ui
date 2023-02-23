@@ -12,6 +12,7 @@
   "dependencies": {
     "@popperjs/core": "^2.11.6",
     "@yep-ui/components": "workspace:*",
+    "@yep-ui/hooks": "wokspace:*",
     "@yep-ui/playground": "workspace:*",
     "@yep-ui/preset-theme": "workspace:*",
     "date-fns": "^2.29.3"

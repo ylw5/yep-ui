@@ -1,0 +1,9 @@
+{
+  "name": "@yep-ui/hooks",
+  "type": "module",
+  "version": "0.0.0",
+  "private": true,
+  "sideeffects": false,
+  "main": "index.ts",
+  "module": "index.ts"
+}

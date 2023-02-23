@@ -2,7 +2,6 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import Unocss from 'unocss/vite'
 import { presetAttributify, presetIcons, presetUno, transformerVariantGroup } from 'unocss'
-// import presetIcons from '@unocss/preset-icons/browser'
 import presetThemeDefault from '@yep-ui/preset-theme'
 export default defineConfig({
   plugins: [

@@ -28,7 +28,7 @@
   opacity: 10;
 }
 body{
-  margin: 0;
+  /* margin: 0; */
   position: relative;
   min-height: 100%;
 
@@ -37,12 +37,12 @@ body:has(dialog[open]){
   overflow: hidden !important;
   overscroll-behavior: contain;
   position: relative !important;
-  padding-left: 0px;
-  padding-top: 0px;
-  padding-right: 0px;
+  padding-left: 8px;
+  padding-top: 8px;
+  padding-right: 8px;
   margin-left: 0;
   margin-top: 0;
 
-  /* FIXME: make body don't move when dialog open */
-  margin-right: 3px !important; 
+  /* : make body don't move when dialog open */
+  margin-right: 17px !important; 
 }

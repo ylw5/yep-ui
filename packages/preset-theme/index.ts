@@ -69,7 +69,7 @@ export function presetThemeDefault(options: PresetYepOptions = {}): Preset<Theme
       },
       // checkbox
       { checkbox: 'cursor-pointer inline-flex justify-center items-center gap-2 mr-1' },
-      { indicator: 'w-[1em] h-[1em] inline-flex justify-center items-center border-border border-solid border-1 text-sm border-box rounded-sm text-white data-checked:(bg-primary border-primary)' },
+      { indicator: 'w-[1em] h-[1em] inline-flex justify-center items-center border-border border-solid border-1 text-sm box-border rounded-sm text-white data-checked:(bg-primary border-primary)' },
       [/^indicator-(.*)$/, ([,c]) => `data-checked:solid-${c}`],
     ],
     rules: [

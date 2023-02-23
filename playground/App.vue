@@ -19,7 +19,7 @@ const v = ref(false)
     <button>test</button>
   </div>
   <div class="flex justify-center flex-col items-center">
-    <Dialog.Root v-model="v" modal>
+    <Dialog.Root modal static>
       <Dialog.Trigger>
         trigger
       </Dialog.Trigger>

@@ -5,11 +5,13 @@ import { isInFocusableElement } from '../../../../untils/focus-management'
 import type { StateDefinition } from '../type'
 import { provideDialogContext } from '../composables/use-dialog-context'
 const props = withDefaults(defineProps<{
-  modelValue: boolean
+  modelValue?: boolean
   modal?: boolean
+  static?: boolean
 }>(), {
   modelValue: false,
   modal: false,
+  static: false,
 })
 const emit = defineEmits<{
   (e: 'beforeClose'): void
@@ -64,15 +66,20 @@ useOutsideClick(
 
     api.close()
   },
-  computed(() => props.modelValue),
+  computed(() => {
+    if (props.static)
+      return false
+    else return api.dialogState.value
+  }),
 )
 </script>
 
 <template>
+  {{ static }}
   <div
-    :data-state="api.dialogState.value ? 'open' : undefined"
+    :data-state="api.dialogState.value ? 'open' : 'close'"
   >
     {{ dialogState }}
-    <slot />
+    <slot :close="api.close" :open="api.open" />
   </div>
 </template>
