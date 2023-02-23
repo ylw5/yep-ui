@@ -1,4 +1,4 @@
 {
   "typescript.tsdk": "node_modules/typescript/lib",
-  "unocss.root": ["docs", "playground"]
+  "unocss.root": ["playground", "docs"]
 }

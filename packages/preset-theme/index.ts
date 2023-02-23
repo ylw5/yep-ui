@@ -1,9 +1,15 @@
 import fs from 'fs/promises'
 import path from 'path'
 import { toEscapedSelector as e } from 'unocss'
+import type { PresetMiniOptions, Theme } from 'unocss/dist/preset-mini'
 import type { Preset } from 'unocss'
+export interface PresetYepOptions extends PresetMiniOptions {}
 // TODO: give option for user to customize theme
-export function presetThemeDefault(): Preset {
+export function presetThemeDefault(options: PresetYepOptions = {}): Preset<Theme> {
+  options.dark = options.dark ?? 'class'
+  options.attributifyPseudo = options.attributifyPseudo ?? false
+  options.preflight = options.preflight ?? true
+  options.variablePrefix = options.variablePrefix ?? 'yep-'
   return {
     name: '@yep-ui/preset-theme',
     theme: {
@@ -40,8 +46,6 @@ export function presetThemeDefault(): Preset {
       [/^solid-(.*)$/, ([,c]) => `bg-${c} border-${c}`],
       // btn
       {
-        'test': 'focus:text-blue',
-        'test-last': 'focus:text-red',
         // 'btn-primary': 'solid-primary text-white hover:solid-primary:75 active:solid-primary-500 focus:text-red focus:solid-primary:75',
         'btn-primary': 'solid-primary text-white hover:solid-primary:75 focus:text-red focus:solid-primary:75',
         // FIXME: 这里的active时的深色没有使用info
@@ -63,6 +67,10 @@ export function presetThemeDefault(): Preset {
           focus:color-primary focus:border-primary focus:shadow-none
         `,
       },
+      // checkbox
+      { checkbox: 'cursor-pointer inline-flex justify-center items-center gap-2 mr-1' },
+      { indicator: 'w-[1em] h-[1em] inline-flex justify-center items-center border-border border-solid border-1 text-sm border-box rounded-sm text-white data-checked:(bg-primary border-primary)' },
+      [/^indicator-(.*)$/, ([,c]) => `data-checked:solid-${c}`],
     ],
     rules: [
 
@@ -166,3 +174,5 @@ export function presetThemeDefault(): Preset {
     ],
   }
 }
+
+export default presetThemeDefault

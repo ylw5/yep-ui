@@ -6,7 +6,8 @@
     "serve": "vite preview",
     "docs:dev": "pnpm run -C docs dev",
     "docs:build": "pnpm run -C docs build",
-    "play": "pnpm -C playground run dev"
+    "play": "pnpm -C playground run dev",
+    "stub": "pnpm -r --filter=./packages/* --parallel run stub"
   },
   "dependencies": {
     "@popperjs/core": "^2.11.6",

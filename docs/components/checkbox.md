@@ -12,3 +12,8 @@ content
 :::
 
 content
+
+TODO:
+- [] focus manage
+- [] checkmark animate
+- [] diabled css (only opacity now)

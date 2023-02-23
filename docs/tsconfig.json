@@ -17,6 +17,6 @@
     // "types": ["../typings/components"],
     "jsx": "preserve"
   },
-  "include": ["**/*.ts", "**/*.d.ts", "**/*.vue", "**/*.md"],
+  "include": ["**/*.ts", "**/*.d.ts", "**/*.vue", "**/*.md", "vite.config.ts"],
   "exclude": ["node_modules"]
 }

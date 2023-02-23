@@ -1,63 +1,53 @@
 <script setup lang="ts">
-import { Checkbox } from '@yep-ui/components'
+import { Checkbox, Dialog } from '@yep-ui/components'
 import { ref } from 'vue'
-const v = ref(true)
-const arr = ref(['a', 'b', 'c'])
+function toggleTheme() {
+  document.documentElement.classList.toggle('dark')
+}
+const v = ref(false)
 </script>
 
 <template>
-  <!-- <button @click="v = !v">
-    button
-  </button> -->
-  {{ arr }}
+  <button @click="toggleTheme">
+    theme
+  </button>
+  <button @click="v = !v">
+    open
+  </button>
+  <!-- {{ v }} -->
+  <div class="flex">
+    <button>test</button>
+  </div>
   <div class="flex justify-center flex-col items-center">
-    <Checkbox.Group v-model="arr" :min="1" :max="2">
-      <Checkbox.Root class="checkbox">
-        <Checkbox.Indicatior class="indicator">
-          <i class="i-ion:checkmark-round" />
-        </Checkbox.Indicatior>
-        a
-      </Checkbox.Root>
-      <Checkbox.Root class="checkbox">
-        <Checkbox.Indicatior class="indicator">
-          <i class="i-ion:checkmark-round" />
-        </Checkbox.Indicatior>
-        b
-      </Checkbox.Root>
-      <Checkbox.Root class="checkbox">
-        <Checkbox.Indicatior class="indicator">
-          <i class="i-ion:checkmark-round" />
-        </Checkbox.Indicatior>
-        c
-      </Checkbox.Root>
-      <Checkbox.Root class="checkbox">
-        <Checkbox.Indicatior class="indicator">
-          <i class="i-ion:checkmark-round" />
-        </Checkbox.Indicatior>
-        d
-      </Checkbox.Root>
-    </Checkbox.Group>
-    <!-- <Checkbox.Root class="checkbox" value="a"> -->
-    <!-- <Checkbox.Indicatior class="indicator" /> -->
-    <!-- </Checkbox.Root> -->
+    <Dialog.Root v-model="v" modal>
+      <Dialog.Trigger>
+        trigger
+      </Dialog.Trigger>
+      <Dialog.Panel class="border-0 rounded-sm">
+        ddd
+        <input type="text">
+        <div class="flex mt-2 justify-end">
+          <Dialog.Close class="btn btn-info">
+            cancle
+          </Dialog.Close>
+        </div>
+      </Dialog.Panel>
+    </Dialog.Root>
   </div>
 </template>
 
 <style>
-label:has(input){
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  justify-items: center;
-  gap: .5rem;
-  margin-right: 1rem;
+.dark body {
+  background: #000;
+  color: aliceblue;
 }
 
-.checkbox:checked{
-  --chkfg:0 0% 100%;
-  --chkbg:300.89 94.378% 51.176%;
-  background-repeat: no-repeat;
-  /* animation: checkmark var(--animation-input,.2s) ease-in-out; */
-  background-image: linear-gradient(-45deg,transparent 65%,hsl(var(--chkbg)) 65.99%),linear-gradient(45deg,transparent 75%,hsl(var(--chkbg)) 75.99%),linear-gradient(-45deg,hsl(var(--chkbg)) 40%,transparent 40.99%),linear-gradient(45deg,hsl(var(--chkbg)) 30%,hsl(var(--chkfg)) 30.99%,hsl(var(--chkfg)) 40%,transparent 40.99%),linear-gradient(-45deg,hsl(var(--chkfg)) 50%,hsl(var(--chkbg)) 50.99%);
+label:has(input:disabled){
+  cursor: not-allowed;
+  opacity: .5;
+}
+
+body {
+  height: 120vh;
 }
 </style>

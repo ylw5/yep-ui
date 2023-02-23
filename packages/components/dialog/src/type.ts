@@ -1,11 +1,8 @@
 import type { Ref } from 'vue'
 
-export enum DialogState {
-  Open,
-  Close,
-}
 export interface StateDefinition {
-  dialogState: Ref<DialogState>
-  panelRef: Ref<HTMLElement | null>
+  dialogState: Ref<boolean>
+  panelRef: Ref<HTMLDialogElement | null>
   close: () => void
+  open: () => void
 }

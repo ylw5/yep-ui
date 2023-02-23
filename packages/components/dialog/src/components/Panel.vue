@@ -1,9 +1,11 @@
 <script setup lang="ts">
-
+import { onMounted, watch } from 'vue'
+import { useDialogContext } from '../composables/use-dialog-context'
+const api = useDialogContext('panel')
 </script>
 
 <template>
-  <div>
+  <dialog :ref="api.panelRef">
     <slot />
-  </div>
+  </dialog>
 </template>

@@ -4,6 +4,7 @@ import type { StateDefinition } from '../type'
 import { useId } from '../composables/use-checkbox-id'
 import { provideCheckboxContext } from '../composables/use-checkbox-context'
 import { useGroupContext } from '../composables/use-group-context'
+import Indicator from './Indicator.vue'
 const props = withDefaults(defineProps<{
   id?: string
   modelValue?: boolean | null
@@ -87,22 +88,6 @@ const state = computed(() => {
   ].join('') || undefined
 })
 
-// hide native input when indicator is seted
-const nativeInputStyles = computed(() => {
-  if (!api.indicator.value?.domRef.value)
-    return ''
-  return `
-    opacity:0;
-    position:absolute;
-    border:0;
-    width:1px;
-    height:1px;
-    margin:-1px;
-    padding:0;
-    overflow:hidden;
-  `
-})
-
 onUnmounted(() => {
   if (!groupContext)
     return
@@ -118,13 +103,16 @@ export default {
 </script>
 
 <template>
-  <label ref="checkboxRoot" :data-state="state">
-    {{ api.disabled.value }}
+  <label
+    ref="checkboxRoot"
+    :data-state="state"
+    :class="$attrs.class"
+  >
     <input
       :disabled="api.disabled.value"
       aria-hidden="false"
       type="checkbox"
-      :style="nativeInputStyles"
+      style="opacity:0;position:absolute;border:0;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;"
       :checked="api.checkboxState.value"
       :value="api.value.value"
       v-bind="$attrs"
@@ -134,6 +122,7 @@ export default {
       :checked="api.checkboxState.value"
       :disabled="api.disabled"
     >
+      <Indicator class="indicator" />
       {{ api.value.value }}
     </slot>
   </label>

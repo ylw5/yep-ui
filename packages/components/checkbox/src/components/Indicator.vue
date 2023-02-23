@@ -10,7 +10,6 @@ onMounted(() => {
     domRef: internalRef,
   }
 })
-// TODO: support group min and max
 </script>
 
 <template>
