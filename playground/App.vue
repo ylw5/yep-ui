@@ -1,25 +1,18 @@
 <script setup lang="ts">
-import { Checkbox, Dialog } from '@yep-ui/components'
-import { ref } from 'vue'
+import { Dialog } from 'yep-ui'
 function toggleTheme() {
   document.documentElement.classList.toggle('dark')
 }
-const v = ref(false)
+const v = ref(true)
+// console.log(Checkbox.Root)
 </script>
 
 <template>
   <button @click="toggleTheme">
     theme
   </button>
-  <button @click="v = !v">
-    open
-  </button>
-  <!-- {{ v }} -->
-  <div class="flex">
-    <button>test</button>
-  </div>
-  <div class="flex justify-center flex-col items-center">
-    <Dialog.Root modal static>
+  <div>
+    <Dialog.Root modal>
       <Dialog.Trigger>
         trigger
       </Dialog.Trigger>
@@ -27,13 +20,14 @@ const v = ref(false)
         ddd
         <input type="text">
         <div class="flex mt-2 justify-end">
-          <Dialog.Close class="btn btn-info">
+          <Dialog.Close class="btn">
             cancle
           </Dialog.Close>
         </div>
       </Dialog.Panel>
     </Dialog.Root>
   </div>
+  <Checkbox.Root class="checkbox" value="1" />
 </template>
 
 <style>

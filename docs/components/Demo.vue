@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import { Checkbox } from '@yep-ui/components'
 const showCode = ref(false)
 </script>
 

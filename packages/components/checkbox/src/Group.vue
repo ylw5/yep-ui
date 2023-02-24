@@ -1,14 +1,14 @@
 <script setup lang="ts">
-import { ref, shallowRef } from 'vue'
-import { provideGroupContext } from '../composables/use-group-context'
-import type { GroupStateDefinition, StateDefinition } from '../type'
+import type { CheckboxGroupContext } from '@yep-ui/tokens'
+import { checkboxGroupInjectionKey } from '@yep-ui/tokens'
+import { provide, ref } from 'vue'
 const props = defineProps<{
   modelValue?: Array<string>
   max?: number
   min?: number
 }>()
 const emits = defineEmits(['update:modelValue', 'change'])
-const groupContext: GroupStateDefinition = {
+const groupContext: CheckboxGroupContext = {
   max: props.max,
   min: props.min,
   values: ref(props.modelValue || []),
@@ -24,7 +24,7 @@ const groupContext: GroupStateDefinition = {
     emits('change')
   },
 }
-provideGroupContext(groupContext)
+provide(checkboxGroupInjectionKey, groupContext)
 </script>
 
 <template>

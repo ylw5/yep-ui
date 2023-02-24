@@ -1,7 +1,0 @@
-{
-  "extends": "../../tsconfig.ts",
-  "compilerOptions": {
-    "lib": ["DOM"]
-  },
-  "include": ["*.ts"]
-}

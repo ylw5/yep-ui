@@ -1,6 +1,23 @@
 {
   "name": "yep-ui",
+  "type": "module",
   "version": "0.0.1",
   "description": "A Component Library for Vue 3",
-  "main": "index.ts"
+  "sideEffects": false,
+  "main": "index.ts",
+  "module": "index.ts",
+  "types": "index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "unbuild",
+    "stub": "unbuild --stub"
+  },
+  "dependencies": {
+    "vue": "^3.2.47"
+  },
+  "devDependencies": {
+    "unplugin-vue-components": "^0.24.0"
+  }
 }

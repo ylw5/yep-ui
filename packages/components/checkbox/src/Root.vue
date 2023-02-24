@@ -1,27 +1,25 @@
 <script setup lang="ts">
-import { computed, onMounted, onUnmounted, ref, shallowRef, watch, watchEffect } from 'vue'
-import type { StateDefinition } from '../type'
-import { useId } from '../composables/use-checkbox-id'
-import { provideCheckboxContext } from '../composables/use-checkbox-context'
-import { useGroupContext } from '../composables/use-group-context'
+import { computed, inject, onMounted, onUnmounted, provide, ref, shallowRef, watch, watchEffect } from 'vue'
+import { checkboxGroupInjectionKey, checkboxInjectionKey } from '@yep-ui/tokens'
+import type { CheckboxContext } from '@yep-ui/tokens'
 import Indicator from './Indicator.vue'
+
 const props = withDefaults(defineProps<{
   id?: string
   modelValue?: boolean | null
   value?: string
   disabled?: boolean
 }>(), {
-  id: `yepui-checkbox-${useId()}`,
   modelValue: null,
 })
 const emits = defineEmits(['update:modelValue', 'change'])
-const groupContext = useGroupContext('root')
+const groupContext = inject(checkboxGroupInjectionKey, null)
 const checkboxRoot = ref<HTMLElement | null>(null)
 
-const indicator = shallowRef<StateDefinition['indicator']['value']>(null)
-const checkboxState = ref<StateDefinition['checkboxState']['value']>(false)
-const value = ref<StateDefinition['value']['value']>(null)
-const disable = ref<StateDefinition['disabled']['value']>(false)
+const indicator = shallowRef<CheckboxContext['indicator']['value']>(null)
+const checkboxState = ref<CheckboxContext['checkboxState']['value']>(false)
+const value = ref<CheckboxContext['value']['value']>(null)
+const disable = ref<CheckboxContext['disabled']['value']>(false)
 // handle min and max in group
 const diableInGroup = computed(() => {
   if (!groupContext)
@@ -35,7 +33,7 @@ const diableInGroup = computed(() => {
   return false
 })
 
-const api: StateDefinition = {
+const api: CheckboxContext = {
   value: computed(() => props.value || value.value),
   disabled: computed(() => props.disabled || diableInGroup.value || disable.value),
   checkboxState: computed(() => {
@@ -57,11 +55,11 @@ const api: StateDefinition = {
   },
 }
 
-provideCheckboxContext(api)
+provide(checkboxInjectionKey, api)
 
 onMounted(() => {
   watchEffect(() => {
-    // text node content in default slot is value when value is not set
+    // text node content in default slot wil be default value
     checkboxRoot.value?.childNodes.forEach((node) => {
       if (node.nodeType === Node.TEXT_NODE && node.textContent)
         value.value = node.textContent.trim()

@@ -1,10 +1,10 @@
-import type { Ref } from 'vue'
+import type { InjectionKey, Ref } from 'vue'
 interface indicatorData {
   id?: string
   domRef: Ref<HTMLElement | null>
   disabled?: boolean
 }
-export interface GroupStateDefinition {
+export interface CheckboxGroupContext {
   // State
   values: Ref<string[]>
   selectCount: Ref<number>
@@ -14,7 +14,7 @@ export interface GroupStateDefinition {
   select(state: boolean, value: string): void
 }
 
-export interface StateDefinition {
+export interface CheckboxContext {
   // State
   value: Ref<string | null>
   disabled: Ref<boolean>
@@ -24,3 +24,6 @@ export interface StateDefinition {
   // Methods
   select: (value: boolean) => void
 }
+
+export const checkboxInjectionKey: InjectionKey<CheckboxContext> = Symbol('checkbox')
+export const checkboxGroupInjectionKey: InjectionKey<CheckboxGroupContext> = Symbol('checkboxGroup')

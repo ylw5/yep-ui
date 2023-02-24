@@ -1,16 +1,17 @@
 <script setup lang="ts">
 import type { Component } from 'vue'
-import { useDialogContext } from '../composables/use-dialog-context'
+import { inject } from 'vue'
+import { dialogInjectionKey } from '@yep-ui/tokens'
 withDefaults(defineProps<{
   as?: Component | string
 }>(), {
   as: 'button',
 })
-const api = useDialogContext('trigger')
+const api = inject(dialogInjectionKey)
 </script>
 
 <template>
-  <component :is="as" @click="api.close">
+  <Component :is="as" @click="api.close">
     <slot />
-  </component>
+  </Component>
 </template>

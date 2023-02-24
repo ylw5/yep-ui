@@ -1,7 +1,6 @@
 {
   "name": "@yep-ui/hooks",
   "version": "0.0.0",
-  "private": true,
   "description": "Yep UI composables",
   "main": "index.ts",
   "module": "index.ts",

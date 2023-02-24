@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "composite": true,
+    "jsx": "preserve",
+    "lib": [
+      "ESNext",
+      "DOM",
+      "DOM.Iterable"
+    ],
+    "skipLibCheck": true
+  }
+}

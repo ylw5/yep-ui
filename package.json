@@ -1,5 +1,10 @@
 {
   "private": true,
+  "workspaces": [
+    "packages/*",
+    "docs",
+    "playground"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "vite build && vue-tsc --declaration --emitDeclarationOnly`",
@@ -18,7 +23,10 @@
     "@yep-ui/hooks": "workspace:*",
     "@yep-ui/playground": "workspace:*",
     "@yep-ui/preset-theme": "workspace:*",
-    "date-fns": "^2.29.3"
+    "@yep-ui/tokens": "workspace:*",
+    "@yep-ui/utils": "workspace:*",
+    "date-fns": "^2.29.3",
+    "yep-ui": "workspace:*"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.34.1",

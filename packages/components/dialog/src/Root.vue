@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { computed, onMounted, ref, watch } from 'vue'
-import { useOutsideClick } from '../../../../hooks/use-outside-click'
-import { isInFocusableElement } from '../../../../untils/focus-management'
-import type { StateDefinition } from '../type'
-import { provideDialogContext } from '../composables/use-dialog-context'
+import { computed, onMounted, provide, ref, watch } from 'vue'
+import { useOutsideClick } from '@yep-ui/hooks'
+import type { DialogContext } from '@yep-ui/tokens'
+import { dialogInjectionKey } from '@yep-ui/tokens'
+import { isInFocusableElement } from '@yep-ui/utils'
 const props = withDefaults(defineProps<{
   modelValue?: boolean
   modal?: boolean
@@ -23,7 +23,7 @@ const emit = defineEmits<{
 const dialogState = ref<boolean>(false)
 const panelRef = ref<HTMLDialogElement | null>(null)
 
-const api: StateDefinition = {
+const api: DialogContext = {
   dialogState: computed(() => dialogState.value || props.modelValue),
   panelRef,
   close: () => {
@@ -38,7 +38,7 @@ const api: StateDefinition = {
   },
 }
 
-provideDialogContext(api)
+provide(dialogInjectionKey, api)
 
 onMounted(() => {
   watch(() => api.dialogState.value, (open) => {
@@ -75,11 +75,9 @@ useOutsideClick(
 </script>
 
 <template>
-  {{ static }}
   <div
     :data-state="api.dialogState.value ? 'open' : 'close'"
   >
-    {{ dialogState }}
     <slot :close="api.close" :open="api.open" />
   </div>
 </template>

@@ -10,11 +10,6 @@
     "strict": true,
     "noImplicitAny": false,
     "skipLibCheck": true,
-    // "paths": {
-    //   "yep-ui": ["../packages/yep-ui"],
-    //   "~/*": ["./.vitepress/vitepress/*"]
-    // },
-    // "types": ["../typings/components"],
     "jsx": "preserve"
   },
   "include": ["**/*.ts", "**/*.d.ts", "**/*.vue", "**/*.md", "vite.config.ts"],
