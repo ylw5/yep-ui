@@ -9,6 +9,12 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    Basic: typeof import('./story/checkbox/Basic.vue')['default']
     ButtonBasic: typeof import('./story/button/ButtonBasic.vue')['default']
+    Controller: typeof import('./story/checkbox/controller.vue')['default']
+    CustomIndicator: typeof import('./story/checkbox/customIndicator.vue')['default']
+    Diabled: typeof import('./story/checkbox/diabled.vue')['default']
+    Group: typeof import('./story/checkbox/group.vue')['default']
+    WithSlot: typeof import('./story/checkbox/withSlot.vue')['default']
   }
 }

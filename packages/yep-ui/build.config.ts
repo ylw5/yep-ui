@@ -1,11 +1,9 @@
 import { defineBuildConfig } from 'unbuild'
 export default defineBuildConfig({
   entries: [
-    './index',
+    { input: 'src/index' },
+    { input: 'src/components/', outDir: 'dist/components/', builder: 'mkdist' },
   ],
   declaration: true,
   clean: true,
-  rollup: {
-    emitCJS: true,
-  },
 })

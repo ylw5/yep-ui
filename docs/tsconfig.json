@@ -1,17 +1,5 @@
 {
-  "compilerOptions": {
-    "target": "ESNext",
-    "module": "ESNext",
-    "moduleResolution": "Node",
-    "resolveJsonModule": true,
-    "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "strict": true,
-    "noImplicitAny": false,
-    "skipLibCheck": true,
-    "jsx": "preserve"
-  },
-  "include": ["**/*.ts", "**/*.d.ts", "**/*.vue", "**/*.md", "vite.config.ts"],
+  "extends": "../tsconfig.json",
+  "include": ["**/*", ".vitepress/**/*"],
   "exclude": ["node_modules"]
 }

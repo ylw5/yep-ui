@@ -1,8 +1,12 @@
 {
   "extends": "../tsconfig.json",
   "compilerOptions": {
-    "lib": ["esnext", "dom"]
+    "lib": ["esnext", "dom"],
+    "paths": {
+      "@yep-ui/*": ["../packages/yep-ui/*"],
+      "yep-ui": ["../packages/yep-ui"]
+    }
   },
   "exclude": ["**/dist/**"],
-  "include": ["**/*.ts", "**/*.d.ts", "**/*.vue"]
+  "include": ["**/*.ts", "**/*.d.ts", "**/*.vue", "vite.config.ts"]
 }

@@ -4,20 +4,25 @@
   "version": "0.0.1",
   "description": "A Component Library for Vue 3",
   "sideEffects": false,
-  "main": "index.ts",
-  "module": "index.ts",
-  "types": "index.d.ts",
+  "main": "./dist/yep-ui.umd.cjs",
+  "module": "./dist/yep-ui.js",
+  "types": "./dist/types",
   "files": [
-    "dist"
+    "dist",
+    "volar.d.ts"
   ],
   "scripts": {
-    "build": "unbuild",
-    "stub": "unbuild --stub"
+    "build": "vite build && vue-tsc --declaration --emitDeclarationOnly",
+    "watch": "npm run build --watch src"
   },
   "dependencies": {
     "vue": "^3.2.47"
   },
   "devDependencies": {
-    "unplugin-vue-components": "^0.24.0"
+    "@vitejs/plugin-vue": "^4.0.0",
+    "unplugin-auto-import": "^0.15.0",
+    "unplugin-vue-components": "^0.24.0",
+    "vite": "^4.1.2",
+    "vite-plugin-dts": "^2.0.2"
   }
 }

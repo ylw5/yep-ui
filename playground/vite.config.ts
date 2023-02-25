@@ -4,42 +4,21 @@ import Inspect from 'vite-plugin-inspect'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import Unocss from 'unocss/vite'
-import { presetAttributify, presetUno, transformerVariantGroup } from 'unocss'
-import { presetIcons } from 'unocss/preset-icons'
-import presetThemeDefault from '@yep-ui/preset-theme'
+import { YepResolver } from 'yep-ui'
 // FIXME: can't import packages/yep-ui in vite.config.ts
-// import { YepResolver } from 'yep-ui'
+// console.log(YepResolver)
 
 export default defineConfig({
   base: '/playground/',
+  resolve: {
+    alias: {
+      'yep-ui': '../packages/yep-ui/src/index.ts',
+    },
+  },
   plugins: [
     vue(),
-    Unocss({
-      transformers: [
-        transformerVariantGroup(),
-      ],
-      theme: {
-        data: {
-          checked: 'state~="checked"',
-          active: 'state~="active"',
-          disabled: 'state~="disabled"',
-          open: 'state~="open"',
-        },
-      },
-      presets: [
-        presetThemeDefault(),
-        presetUno(),
-        presetAttributify(),
-        presetIcons({
-          cdn: 'https://esm.sh/',
-          scale: 1.2,
-          extraProperties: {
-            'vertical-align': 'middle',
-            'display': 'inline-block',
-          },
-        }),
-      ],
-    }),
+    Unocss(),
+    Inspect(),
     AutoImport({
       dts: true,
       vueTemplate: true,
@@ -54,20 +33,8 @@ export default defineConfig({
     Components({
       dts: false,
       resolvers: [
-        function resolveComponent(name: string) {
-          const [component, sub] = name.split('.')
-          if (component && sub) {
-            return {
-              name: `${component}${sub}`,
-              from: 'yep-ui',
-            }
-          }
-        },
-        // FIXME: can't import packages/yep-ui in vite.config.ts
-        // YepResolver(),
-
+        YepResolver(),
       ],
     }),
-    Inspect(),
   ],
 })

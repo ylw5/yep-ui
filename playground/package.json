@@ -5,7 +5,9 @@
     "dev": "vite"
   },
   "dependencies": {
-    "vue": "^3.2.47"
+    "@yep-ui/preset-theme": "workspace:*",
+    "vue": "^3.2.47",
+    "yep-ui": "workspace:*"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.0.0",

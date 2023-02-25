@@ -1,31 +1,23 @@
 {
   "compilerOptions": {
-    "target": "es2018",
+    "target": "esnext",
     "module": "esnext",
-    "lib": ["esnext"],
+    "sourceMap": false,
     "moduleResolution": "node",
-    "esModuleInterop": true,
+    "allowJs": false,
     "strict": true,
-    "strictNullChecks": true,
+    "noUnusedLocals": true,
     "resolveJsonModule": true,
-    "skipDefaultLibCheck": true,
-    "skipLibCheck": true,
-    "jsx": "preserve",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "removeComments": false,
     "types": [
-      "node",
-      "vite/client"
-    ],
-    "rootDir": ".",
-    "baseUrl": ".",
-    "outDir": "dist",
-    "paths": {
-      "@yep-ui/*": ["packages/*"],
-      "yep-ui": ["packages/yep-ui/index.ts"]
-    }
+      "node"
+    ]
   },
   "exclude": [
     "**/dist/**",
-    "**/node_modules/**"
-
+    "**/node_modules/**",
+    "**/playground/**"
   ]
 }

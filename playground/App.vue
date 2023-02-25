@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Dialog } from 'yep-ui'
+// import { Dialog } from 'yep-ui'
 function toggleTheme() {
   document.documentElement.classList.toggle('dark')
 }

@@ -1,9 +1,0 @@
-{
-  "name": "@yep-ui/utils",
-  "private": true,
-  "main": "index.ts",
-  "module": "index.ts",
-  "peerDependencies": {
-    "vue": "^3.2.0"
-  }
-}
