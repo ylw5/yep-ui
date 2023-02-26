@@ -14,10 +14,11 @@ const groupContext: CheckboxGroupContext = {
   values: ref(props.modelValue || []),
 
   selectCount: ref(0),
-  select(value, valueToSelect) {
-    if (value && !groupContext.values.value.includes(valueToSelect))
+  select(checked, valueToSelect) {
+    if (checked && !groupContext.values.value.includes(valueToSelect))
       groupContext.values.value.push(valueToSelect)
-    else
+
+    else if (!checked)
       groupContext.values.value = groupContext.values.value.filter(v => v !== valueToSelect)
 
     emits('update:modelValue', groupContext.values.value)

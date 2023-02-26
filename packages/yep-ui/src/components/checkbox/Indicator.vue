@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { inject, onMounted, ref } from 'vue'
 import { checkboxInjectionKey } from '../../tokens'
-// import { useCheckboxContext } from '../composables/use-checkbox-context'
 const internalRef = ref(null)
 const api = inject(checkboxInjectionKey, null)
 onMounted(() => {

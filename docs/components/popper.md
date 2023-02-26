@@ -1,9 +1,8 @@
-# 弹出
+# 弹出框
+触发弹出一个气泡框。
 
 
 
-:::card 默认按键
-:::code 
-<<< ../packages/components/popper/story/Basic.vue 
-:::
+
+
 

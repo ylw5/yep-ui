@@ -1,13 +1,10 @@
 <template>
   <div class="flex gap-2">
     <button class="btn">
-      default
+      Button
     </button>
     <button class="btn btn-primary">
       primary
-    </button>
-    <button class="btn btn-info">
-      info
     </button>
     <button class="btn btn-success">
       success

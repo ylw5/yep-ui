@@ -1,5 +1,39 @@
 {
   "extends": "../tsconfig.json",
-  "include": ["**/*", ".vitepress/**/*"],
-  "exclude": ["node_modules"]
+  "compilerOptions": {
+    "module": "esnext",
+    "baseUrl": ".",
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    // "types": [
+    //   "anu-vue/volar"
+    // ],
+    "lib": [
+      "esnext",
+      "dom",
+      "dom.iterable",
+      "scripthost"
+    ],
+    "types": [
+      "vite/client"
+    ],
+    "paths": {
+      // "@yep-ui/*": [
+      //   "../packages/yep-ui/*"
+      // ],
+      // "yep-ui": [
+      //   "../packages/yep-ui"
+      // ]
+    }
+  },
+  "exclude": [
+    "**/dist/**"
+  ],
+  "include": [
+    "**/*.ts",
+    "**/*.d.ts",
+    "**/*.vue",
+    "**/*.md",
+    ".vitepress/shims.d.ts"
+  ]
 }

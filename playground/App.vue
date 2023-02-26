@@ -1,33 +1,25 @@
 <script setup lang="ts">
-// import { Dialog } from 'yep-ui'
 function toggleTheme() {
   document.documentElement.classList.toggle('dark')
 }
-const v = ref(true)
-// console.log(Checkbox.Root)
+const checkedfruits = ref(['apple', 'banana'])
+const fruits = ['apple', 'banana', 'orange']
 </script>
 
 <template>
   <button @click="toggleTheme">
     theme
   </button>
-  <div>
-    <Dialog.Root modal>
-      <Dialog.Trigger>
-        trigger
-      </Dialog.Trigger>
-      <Dialog.Panel class="border-0 rounded-sm">
-        ddd
-        <input type="text">
-        <div class="flex mt-2 justify-end">
-          <Dialog.Close class="btn">
-            cancle
-          </Dialog.Close>
-        </div>
-      </Dialog.Panel>
-    </Dialog.Root>
-  </div>
-  <Checkbox.Root class="checkbox" value="1" />
+
+  <Checkbox.Group v-model="checkedfruits" :min="1" :max="2" class="flex gap-2">
+    <Checkbox.Root
+      v-for="fruit in fruits"
+      :key="fruit"
+      class="checkbox"
+      :value="fruit"
+    />
+  </Checkbox.Group>
+  <p>selected: {{ checkedfruits }}</p>
 </template>
 
 <style>

@@ -1,8 +1,35 @@
 {
-  "extends": "../../tsconfig.json",
+  "extends": "../tsconfig.json",
   "compilerOptions": {
     "baseUrl": ".",
-    "types": ["node"]
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    // "types": [
+    //   "anu-vue/volar"
+    // ],
+    "lib": [
+      "esnext",
+      "dom",
+      "dom.iterable",
+      "scripthost"
+    ],
+    "paths": {
+      // "@anu/*": [
+      //   "../packages/yep-ui/*"
+      // ],
+      "yep-ui": [
+        "../packages/yep-ui"
+      ]
+    }
   },
-  "include": ["src/**/*"]
+  "exclude": [
+    "**/dist/**"
+  ],
+  "include": [
+    "**/*.ts",
+    "**/*.d.ts",
+    "**/*.vue",
+    "**/*.md",
+    ".vitepress/shims.d.ts"
+  ]
 }

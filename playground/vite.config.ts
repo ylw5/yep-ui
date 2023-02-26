@@ -4,12 +4,12 @@ import Inspect from 'vite-plugin-inspect'
 import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
 import Unocss from 'unocss/vite'
-import { YepResolver } from 'yep-ui'
+// import { YepResolver } from 'yep-ui'
 // FIXME: can't import packages/yep-ui in vite.config.ts
 // console.log(YepResolver)
 
 export default defineConfig({
-  base: '/playground/',
+  // base: '/playground/',
   resolve: {
     alias: {
       'yep-ui': '../packages/yep-ui/src/index.ts',
@@ -31,9 +31,17 @@ export default defineConfig({
       cache: true,
     }),
     Components({
-      dts: false,
+      dts: true,
       resolvers: [
-        YepResolver(),
+        function resolveComponent(name: string) {
+          const [component, sub] = name.split('.')
+          if (component && sub) {
+            return {
+              name: `${component}${sub}`,
+              from: 'yep-ui',
+            }
+          }
+        },
       ],
     }),
   ],

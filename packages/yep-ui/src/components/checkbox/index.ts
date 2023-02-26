@@ -1,12 +1,12 @@
 import Root from './Root.vue'
-import Indicatior from './Indicator.vue'
+import Indicator from './Indicator.vue'
 import Group from './Group.vue'
 export const Checkbox = {
   Root,
-  Indicatior,
+  Indicator,
   Group,
 }
 
 export const CheckboxRoot = Root
-export const CheckboxIndicator = Indicatior
+export const CheckboxIndicator = Indicator
 export const CheckboxGroup = Group

@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import { Checkbox } from '@yep-ui/components'
 const showCode = ref(false)
 </script>
 
@@ -8,7 +7,7 @@ const showCode = ref(false)
   <div>
     <slot />
     <div class="border-solid border-1 border-border rounded-lg">
-      <div class="vp-raw flex items-center py-4 px-3">
+      <div class="vp-raw py-4 px-3">
         <slot name="demo" />
       </div>
       <div

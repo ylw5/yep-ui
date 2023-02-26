@@ -27,6 +27,7 @@ importers:
       '@yep-ui/preset-theme': workspace:*
       markdown-it-container: ^3.0.0
       unocss: ^0.50.0
+      unplugin-auto-import: ^0.15.0
       unplugin-vue-components: ^0.24.0
       vite: ^4.1.2
       vite-plugin-inspect: ^0.7.15
@@ -42,6 +43,7 @@ importers:
       '@iconify-json/carbon': 1.1.11
       markdown-it-container: 3.0.0
       unocss: 0.50.0_vite@4.1.2
+      unplugin-auto-import: 0.15.0
       unplugin-vue-components: 0.24.0_vue@3.2.47
       vite: 4.1.2
       vite-plugin-inspect: 0.7.15_vite@4.1.2
