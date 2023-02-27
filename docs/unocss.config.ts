@@ -6,10 +6,12 @@ export default defineConfig({
     presetThemeDefault(),
     presetIcons({
       cdn: 'https://esm.sh/',
-      scale: 1.2,
       extraProperties: {
-        'vertical-align': 'text-top',
+        'vertical-align': 'middle',
         'display': 'inline-block',
+        'flex-shrink': '0',
+        'height': '1em',
+        'width': '1em',
         'backface-visibility': 'hidden',
       },
     }),
@@ -17,10 +19,10 @@ export default defineConfig({
   transformers: [
     transformerVariantGroup(),
   ],
-  configDeps: [
-    '../packages/preset-theme/src/shortcuts.ts',
-    '../packages/preset-theme/src/rules.ts',
-    '../packages/preset-theme/src/variants.ts',
-    '../packages/preset-theme/src/index.ts',
-  ],
+  // configDeps: [
+  //   '../packages/preset-theme/src/shortcuts.ts',
+  //   '../packages/preset-theme/src/rules.ts',
+  //   '../packages/preset-theme/src/variants.ts',
+  //   '../packages/preset-theme/src/index.ts',
+  // ],
 })

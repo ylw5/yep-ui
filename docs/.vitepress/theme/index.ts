@@ -1,6 +1,7 @@
 import DefaultTheme from 'vitepress/theme'
 import 'uno.css'
 import Demo from '../../components/Demo.vue'
+// import './style.css'
 
 export default {
   ...DefaultTheme,

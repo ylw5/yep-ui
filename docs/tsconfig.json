@@ -34,6 +34,7 @@
     "**/*.d.ts",
     "**/*.vue",
     "**/*.md",
-    ".vitepress/shims.d.ts"
+    ".vitepress/shims.d.ts",
+    "auto-imports.d.ts"
   ]
 }

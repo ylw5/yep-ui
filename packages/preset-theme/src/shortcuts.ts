@@ -12,7 +12,7 @@ const shortcuts: Exclude<Preset['shortcuts'], undefined | StaticShortcutMap> = [
           text-white bg-gray-700
           py-0 px-4
           h-9
-          solid-gray-500 border-1 rounded-1 outline-0 
+          solid-gray-500 border-1 border-none rounded-1 outline-0 
           relative z-auto
           inline-flex flex-nowrap flex-shrink-0 items-center justify-center
           select-none
@@ -23,7 +23,22 @@ const shortcuts: Exclude<Preset['shortcuts'], undefined | StaticShortcutMap> = [
           active:solid-[#1f1f1f]
           focus:solid-gray-600
         `,
+    'btn-text': 'm-0 p-initial h-initial w-initial border-0 rounded-initial bg-transparent z-auto text-center decoration-none text-initial hover:(text-primary bg-transparent) focus:(bg-transparent text-primary) active:(text-primary-800 bg-transparent) focus-visible:outline-none',
   },
+  // input
+  { input: 'transition w-full flex-grow-1 h-8 px-3 outline-0 px-3 bg-none bg-input-bg box-border b b-solid b-border rounded-sm text-input-text hover:(ring-1 ring-primary) focus:(ring-1 ring-primary)' },
+  {
+    inputgroup: `
+      px-3 inline-flex flex-grow-1 w-full items-center justify-center bg-input-bg bg-none b b-solid b-border rounded-sm transform-gpu hover:(ring-1 ring-primary) data-focus:(ring-1 ring-primary) transition
+      [&>input]:(border-0 w-full flex-grow-1 h-8 p-0 bg-none outline-0 bg-input-bg box-border rounded-sm text-input-text)
+    `,
+  },
+  [/^input-(.*)$/, ([,c]) => `border-${c} focus:(ring-${c})`],
+  { 'input-xs': 'h-4 px-1 text-xs' },
+  { 'input-sm': 'h-6 px-2 text-sm' },
+  { 'input-md': 'h-8 px-3 text-base' },
+  { 'input-lg': 'h-10 px-4 text-lg' },
+  { 'input-ghost': 'bg-transparent border-0' },
   // checkbox
   { checkbox: 'cursor-pointer inline-flex justify-center items-center gap-2 mr-1 data-disabled:(cursor-not-allowed opacity-60)' },
   // TODO: checkbox-${color}

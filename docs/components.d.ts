@@ -10,8 +10,15 @@ export {}
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     'Checkbox.Group': typeof import('yep-ui')['CheckboxGroup']
-    'Checkbox.Indicatior': typeof import('yep-ui')['CheckboxIndicatior']
     'Checkbox.Indicator': typeof import('yep-ui')['CheckboxIndicator']
     'Checkbox.Root': typeof import('yep-ui')['CheckboxRoot']
+    'Input.Clear': typeof import('yep-ui')['InputClear']
+    'Input.Group': typeof import('yep-ui')['InputGroup']
+    'Input.Root': typeof import('yep-ui')['InputRoot']
+    'Popper.Anchor': typeof import('yep-ui')['PopperAnchor']
+    'Popper.Panel': typeof import('yep-ui')['PopperPanel']
+    'Popper.PanelArrow': typeof import('yep-ui')['PopperPanelArrow']
+    'Popper.Root': typeof import('yep-ui')['PopperRoot']
+    'Popper.Trigger': typeof import('yep-ui')['PopperTrigger']
   }
 }

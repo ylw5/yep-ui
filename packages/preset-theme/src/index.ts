@@ -19,6 +19,7 @@ export function presetThemeDefault(options = {}): Preset {
         active: 'state~="active"',
         disabled: 'state~="disabled"',
         open: 'state~="open"',
+        focus: 'state~="focus"',
       },
       colors: {
         primary: {
@@ -74,7 +75,10 @@ export function presetThemeDefault(options = {}): Preset {
         },
 
         border: 'var(--y-border-color)',
-
+        input: {
+          bg: 'var(--y-input-bg)',
+          text: 'var(--y-input-text)',
+        },
       },
 
       // extend: {

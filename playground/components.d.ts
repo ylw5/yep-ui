@@ -15,5 +15,13 @@ declare module '@vue/runtime-core' {
     'Dialog.Panel': typeof import('yep-ui')['DialogPanel']
     'Dialog.Root': typeof import('yep-ui')['DialogRoot']
     'Dialog.Trigger': typeof import('yep-ui')['DialogTrigger']
+    'Input.Clear': typeof import('yep-ui')['InputClear']
+    'Input.Group': typeof import('yep-ui')['InputGroup']
+    'Input.Root': typeof import('yep-ui')['InputRoot']
+    'Popper.Anchor': typeof import('yep-ui')['PopperAnchor']
+    'Popper.Panel': typeof import('yep-ui')['PopperPanel']
+    'Popper.PanelArrow': typeof import('yep-ui')['PopperPanelArrow']
+    'Popper.Root': typeof import('yep-ui')['PopperRoot']
+    'Popper.Trigger': typeof import('yep-ui')['PopperTrigger']
   }
 }

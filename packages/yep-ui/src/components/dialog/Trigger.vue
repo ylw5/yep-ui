@@ -7,6 +7,7 @@ withDefaults(defineProps<{
 }>(), {
   as: 'button',
 })
+
 const api = inject(dialogInjectionKey, null)
 if (!api)
   throw new Error('dialogTrigger without Root')

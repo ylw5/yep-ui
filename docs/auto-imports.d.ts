@@ -7,6 +7,7 @@ declare global {
   const Checkbox: typeof import('yep-ui')['Checkbox']
   const Dialog: typeof import('yep-ui')['Dialog']
   const EffectScope: typeof import('vue')['EffectScope']
+  const Input: typeof import('yep-ui')['Input']
   const computed: typeof import('vue')['computed']
   const createApp: typeof import('vue')['createApp']
   const customRef: typeof import('vue')['customRef']
@@ -70,6 +71,7 @@ declare module 'vue' {
     readonly Checkbox: UnwrapRef<typeof import('yep-ui')['Checkbox']>
     readonly Dialog: UnwrapRef<typeof import('yep-ui')['Dialog']>
     readonly EffectScope: UnwrapRef<typeof import('vue')['EffectScope']>
+    readonly Input: UnwrapRef<typeof import('yep-ui')['Input']>
     readonly computed: UnwrapRef<typeof import('vue')['computed']>
     readonly createApp: UnwrapRef<typeof import('vue')['createApp']>
     readonly customRef: UnwrapRef<typeof import('vue')['customRef']>

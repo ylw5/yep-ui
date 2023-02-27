@@ -28,19 +28,20 @@ export default defineConfig({
         {
           text: '基础组件',
           items: [
-            { text: 'Button 按钮', link: '/components/button' },
+            { text: 'Button 按钮 ', link: '/components/button' },
           ],
         },
         {
           text: '数据输入组件',
           items: [
-            { text: '复选框 checkbox', link: '/components/checkbox' },
+            { text: 'Checkbox 复选框 ', link: '/components/checkbox' },
+            { text: 'Input 输入框', link: '/components/input' },
           ],
         },
         {
           text: '反馈组件',
           items: [
-            { text: '弹出框 Popover', link: '/components/popper' },
+            { text: 'Popover 弹出框 ', link: '/components/popper' },
           ],
         },
       ],
@@ -74,4 +75,5 @@ export default defineConfig({
       })
     },
   },
+
 })

@@ -2,24 +2,20 @@
 function toggleTheme() {
   document.documentElement.classList.toggle('dark')
 }
-const checkedfruits = ref(['apple', 'banana'])
-const fruits = ['apple', 'banana', 'orange']
+const text = ref('hello')
 </script>
 
 <template>
   <button @click="toggleTheme">
     theme
   </button>
-
-  <Checkbox.Group v-model="checkedfruits" :min="1" :max="2" class="flex gap-2">
-    <Checkbox.Root
-      v-for="fruit in fruits"
-      :key="fruit"
-      class="checkbox"
-      :value="fruit"
-    />
-  </Checkbox.Group>
-  <p>selected: {{ checkedfruits }}</p>
+  <Input.Root v-model="text" class="input " />
+  <Input.Group
+    class="inputgroup "
+  >
+    <Input.Root maxlength="5" class="" />
+    5
+  </Input.Group>
 </template>
 
 <style>

@@ -9,7 +9,13 @@
   --y-danger: #F56C6C;
   --y-warning: #E6A23C;
   --y-info: #909399;
+
   --y-border-color: #dcdfe6;
+  --y-bg-overlay: #ffffff;
+
+  --y-box-shadow-light: 0px 0px 12px rgba(0, 0, 0, .12);
+  --y-input-bg: #ffffff;
+  --y-input-text:#606266;
 }
 :root.dark{
   --y-primary: #409EFF;
@@ -19,6 +25,11 @@
   --y-info: #909399;
 
   --y-border-color: #4C4D4F;
+  --y-bg-overlay: #1d1e1f;
+  
+  --y-box-shadow-light: 0px 0px 12px rgba(0, 0, 0, .72);
+  --y-input-bg: #1d1e1f;
+  --y-input-text: #CFD3DC;
 }
 
 [data-state~="diabled"],
@@ -45,4 +56,14 @@ body:has(dialog[open]){
 
   /* : make body don't move when dialog open */
   margin-right: 17px !important; 
+}
+
+button, input, optgroup, select, textarea {
+  font-family: inherit;
+  font-size: 100%;
+  font-weight: inherit;
+  line-height: inherit;
+  color: inherit;
+  margin: 0;
+  padding: 0;
 }

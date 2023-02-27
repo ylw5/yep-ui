@@ -2,7 +2,7 @@
   "name": "@yep-ui/playground",
   "private": true,
   "scripts": {
-    "dev": "vite"
+    "dev": "vite dev"
   },
   "dependencies": {
     "@yep-ui/preset-theme": "workspace:*",

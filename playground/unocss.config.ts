@@ -5,11 +5,14 @@ export default defineConfig({
     presetUno(),
     presetThemeDefault(),
     presetIcons({
-      cdn: 'https://esm.sh/',
-      scale: 1.2,
+      // cdn: 'https://esm.sh/',
       extraProperties: {
         'vertical-align': 'middle',
         'display': 'inline-block',
+        'flex-shrink': '0',
+        'height': '1em',
+        'width': '1em',
+        'backface-visibility': 'hidden',
       },
     }),
   ],
