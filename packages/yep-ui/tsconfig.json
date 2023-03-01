@@ -18,10 +18,8 @@
     "skipLibCheck": true
   },
   "include": [
-    "src/**/*.ts",
-    "src/**/*.d.ts",
-    "src/**/*.tsx",
-    "src/**/*.vue",
+    "**/*.ts",
+    "**/*.vue",
     "auto-imports.d.ts",
     "shims.d.ts",
     "volar.d.ts"

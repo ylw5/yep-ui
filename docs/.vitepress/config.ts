@@ -26,16 +26,19 @@ export default defineConfig({
       ],
       '/components/': [
         {
-          text: '基础组件',
+          text: '通用组件',
           items: [
-            { text: 'Button 按钮 ', link: '/components/button' },
+            { text: 'Button 按钮', link: '/components/button' },
+            { text: 'Avatar 头像', link: '/components/avatar' },
           ],
         },
         {
           text: '数据输入组件',
           items: [
+            { text: 'RadioGroup 单选框', link: '/components/radio' },
             { text: 'Checkbox 复选框 ', link: '/components/checkbox' },
             { text: 'Input 输入框', link: '/components/input' },
+            { text: 'Switch(Toggle) 开关', link: '/components/switch' },
           ],
         },
         {

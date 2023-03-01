@@ -1,4 +1,4 @@
-import path from 'path'
+// import path from 'path'
 import { defineConfig } from 'vite'
 import Components from 'unplugin-vue-components/vite'
 import Inspect from 'vite-plugin-inspect'
@@ -9,9 +9,9 @@ import AutoImport from 'unplugin-auto-import/vite'
 
 export default defineConfig({
   resolve: {
-    alias: {
-      'yep-ui': `${path.resolve(__dirname, '../packages/yep-ui/src/index')} `,
-    },
+    // alias: {path
+    //   'yep-ui': `${path.resolve(__dirname, '../packages/yep-ui/src/index')} `,
+    // },
   },
   plugins: [
     Inspect(),
@@ -22,7 +22,7 @@ export default defineConfig({
       imports: [
         'vue',
         {
-          'yep-ui': ['Dialog', 'Checkbox', 'Input'],
+          'yep-ui': ['Dialog', 'Checkbox', 'Input', 'Switch', 'RadioGroup'],
         },
       ],
       cache: true,

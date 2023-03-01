@@ -20,5 +20,11 @@ declare module '@vue/runtime-core' {
     'Popper.PanelArrow': typeof import('yep-ui')['PopperPanelArrow']
     'Popper.Root': typeof import('yep-ui')['PopperRoot']
     'Popper.Trigger': typeof import('yep-ui')['PopperTrigger']
+    'RadioGroup.Label': typeof import('yep-ui')['RadioGroupLabel']
+    'RadioGroup.Option': typeof import('yep-ui')['RadioGroupOption']
+    'RadioGroup.Root': typeof import('yep-ui')['RadioGroupRoot']
+    'Switch.Group': typeof import('yep-ui')['SwitchGroup']
+    'Switch.Label': typeof import('yep-ui')['SwitchLabel']
+    'Switch.Root': typeof import('yep-ui')['SwitchRoot']
   }
 }

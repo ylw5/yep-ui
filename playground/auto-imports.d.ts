@@ -9,6 +9,8 @@ declare global {
   const EffectScope: typeof import('vue')['EffectScope']
   const Input: typeof import('yep-ui')['Input']
   const Popper: typeof import('yep-ui')['Popper']
+  const RadioGroup: typeof import('yep-ui')['RadioGroup']
+  const Switch: typeof import('yep-ui')['Switch']
   const computed: typeof import('vue')['computed']
   const createApp: typeof import('vue')['createApp']
   const customRef: typeof import('vue')['customRef']
@@ -74,6 +76,8 @@ declare module 'vue' {
     readonly EffectScope: UnwrapRef<typeof import('vue')['EffectScope']>
     readonly Input: UnwrapRef<typeof import('yep-ui')['Input']>
     readonly Popper: UnwrapRef<typeof import('yep-ui')['Popper']>
+    readonly RadioGroup: UnwrapRef<typeof import('yep-ui')['RadioGroup']>
+    readonly Switch: UnwrapRef<typeof import('yep-ui')['Switch']>
     readonly computed: UnwrapRef<typeof import('vue')['computed']>
     readonly createApp: UnwrapRef<typeof import('vue')['createApp']>
     readonly customRef: UnwrapRef<typeof import('vue')['customRef']>

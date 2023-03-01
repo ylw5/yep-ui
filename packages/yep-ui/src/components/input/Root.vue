@@ -14,10 +14,18 @@ const props = defineProps({
     type: Boolean,
     default: false,
   },
+  formatter: {
+    type: Function,
+    default: (value: string) => value,
+  },
+  parser: {
+    type: Function,
+    default: (value: string) => value,
+  },
 })
 const emits = defineEmits(['update:modelValue'])
 const input = ref<HTMLInputElement | null>(null)
-const text = ref(props.modelValue || '')
+const text = ref(ParseAndFormatText(props.modelValue || ''))
 const inputData: InputContext = {
   text,
   domRef: input,
@@ -25,7 +33,19 @@ const inputData: InputContext = {
 
 function handleInput(e: Event) {
   const target = e.target as HTMLInputElement
-  text.value = target.value
+  const formattedText = ParseAndFormatText(target.value)
+  // make input value and text.value sync
+  if (formattedText === text.value)
+    target.value = formattedText
+
+  else text.value = formattedText
+}
+
+function ParseAndFormatText(text: string) {
+  const parsedText = props.parser(text)
+  const formattedText = props.formatter(parsedText)
+
+  return formattedText
 }
 
 watch(text, (value) => {

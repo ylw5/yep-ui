@@ -13,6 +13,7 @@ export default defineConfig({
         'height': '1em',
         'width': '1em',
         'backface-visibility': 'hidden',
+        'color': 'currentColor',
       },
     }),
   ],

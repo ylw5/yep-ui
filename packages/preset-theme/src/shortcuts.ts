@@ -23,13 +23,13 @@ const shortcuts: Exclude<Preset['shortcuts'], undefined | StaticShortcutMap> = [
           active:solid-[#1f1f1f]
           focus:solid-gray-600
         `,
-    'btn-text': 'm-0 p-initial h-initial w-initial border-0 rounded-initial bg-transparent z-auto text-center decoration-none text-initial hover:(text-primary bg-transparent) focus:(bg-transparent text-primary) active:(text-primary-800 bg-transparent) focus-visible:outline-none',
+    'btn-text': 'm-0 p-initial h-initial w-initial border-0 outline-0 rounded-initial bg-transparent z-auto text-center decoration-none text-initial hover:(bg-transparent) focus:(bg-transparent) active:(bg-transparent)',
   },
   // input
   { input: 'transition w-full flex-grow-1 h-8 px-3 outline-0 px-3 bg-none bg-input-bg box-border b b-solid b-border rounded-sm text-input-text hover:(ring-1 ring-primary) focus:(ring-1 ring-primary)' },
   {
     inputgroup: `
-      px-3 inline-flex flex-grow-1 w-full items-center justify-center bg-input-bg bg-none b b-solid b-border rounded-sm transform-gpu hover:(ring-1 ring-primary) data-focus:(ring-1 ring-primary) transition
+      px-3 inline-flex flex-grow-1 w-full items-center justify-center bg-input-bg bg-none text-input-text b b-solid b-border rounded-sm transform-gpu hover:(ring-1 ring-primary) data-focus:(ring-1 ring-primary) transition
       [&>input]:(border-0 w-full flex-grow-1 h-8 p-0 bg-none outline-0 bg-input-bg box-border rounded-sm text-input-text)
     `,
   },
@@ -44,5 +44,13 @@ const shortcuts: Exclude<Preset['shortcuts'], undefined | StaticShortcutMap> = [
   // TODO: checkbox-${color}
   { indicator: 'w-1em h-1em inline-flex justify-center items-center border-border border-solid border-1 text-sm box-border rounded-sm text-white data-checked:(bg-primary border-primary)' },
   [/^indicator-(.*)$/, ([,c]) => `data-checked:solid-${c}`],
+
+  // switch
+
+  // avatar
+  { avatar: 'relative inline-flex [&>div]:(block aspect-square overflow-hidden) [&_img]:(h-full w-full object-cover align-mid)' },
+  { 'avatar-group': 'flex overflow-hidden [&_.avatar]:(rounded-full overflow-hidden b-2 b-solid b-gray-600)' },
+  // radio
+  { radio: 'shrink-0 h-6 w-6 cursor-pointer appearance-none rounded-full b-solid b-1 b-border group-data-checked:(shadow-[0_0_0_4px_var(--un-shadow-color)_inset] bg-primary) checked:(shadow-[0_0_0_4px_var(--un-shadow-color)_inset] bg-primary) shadow-white' },
 ]
 export default shortcuts

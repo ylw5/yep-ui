@@ -25,7 +25,7 @@ export default defineConfig({
       imports: [
         'vue',
         {
-          'yep-ui': ['Dialog', 'Checkbox', 'Popper', 'Input'],
+          'yep-ui': ['Dialog', 'Checkbox', 'Popper', 'Input', 'Switch', 'RadioGroup'],
         },
       ],
       cache: true,
