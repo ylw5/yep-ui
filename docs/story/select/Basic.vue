@@ -13,7 +13,7 @@ const selectedPerson = ref(people[0])
 </script>
 
 <template>
-  <Select.Root v-model="selectedPerson">
+  <Select.Root v-model="selectedPerson" class="relative">
     <Select.Trigger
       class="input text-left cursor-pointer"
     >

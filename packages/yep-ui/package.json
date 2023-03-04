@@ -4,15 +4,18 @@
   "version": "0.0.1",
   "description": "A Component Library for Vue 3",
   "sideEffects": false,
-  "main": "src/index.ts",
-  "module": "src/index.ts",
+  "main": "./dist/yep-ui.umd.cjs",
+  "module": "./dist/yep-ui.js",
+  "types": "./dist/types",
   "files": [
     "dist",
     "volar.d.ts"
   ],
   "scripts": {
+    "dev": "concurrently \"vite build --watch\" \"vue-tsc  --declaration --emitDeclarationOnly --watch\"",
     "build": "vite build && vue-tsc --declaration --emitDeclarationOnly",
-    "watch": "npm run build --watch src"
+    "lint": "eslint . --fix",
+    "test": "vitest"
   },
   "dependencies": {
     "@popperjs/core": "^2.11.6",

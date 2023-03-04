@@ -1,10 +1,17 @@
-import Root from './src/components/Root.vue'
-import Tigger from './src/components/Trigger.vue'
-import Options from './src/components/Options.vue'
-import Option from './src/components/Option.vue'
-export default {
+import Root from './Root.vue'
+import Trigger from './Trigger.vue'
+import Options from './Options.vue'
+import Option from './Option.vue'
+import Label from './Label.vue'
+export const Select = {
   Root,
-  Tigger,
+  Trigger,
   Options,
   Option,
+  Label,
 }
+export const SelectRoot = Root
+export const SelectTrigger = Trigger
+export const SelectOptions = Options
+export const SelectOption = Option
+export const SelectLabel = Label

@@ -16,6 +16,9 @@
   --y-box-shadow-light: 0px 0px 12px rgba(0, 0, 0, .12);
   --y-input-bg: #ffffff;
   --y-input-text:#606266;
+
+  --y-text-color-placehoder: #a8abb2;
+  --y-text-color-disabled: #c0c4cc;
 }
 :root.dark{
   --y-primary: #409EFF;
@@ -30,6 +33,9 @@
   --y-box-shadow-light: 0px 0px 12px rgba(0, 0, 0, .72);
   --y-input-bg: #1d1e1f;
   --y-input-text: #CFD3DC;
+
+  --y-text-color-placehoder: #8D9095;
+  --y-text-color-disabled: #6C6E72;
 }
 
 [data-state~="diabled"],

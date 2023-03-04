@@ -3,14 +3,17 @@
   "type": "module",
   "version": "0.0.0",
   "private": true,
+  "main": "index.js",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build && vue-tsc --declaration --emitDeclarationOnly`",
+    "dev": "pnpm --filter @yep-ui/preset-theme stub && pnpm --filter yep-ui dev",
+
     "serve": "vite preview",
     "docs:dev": "pnpm run -C docs dev",
-    "docs:build": "pnpm run -C docs build",
+    "docs:build": "pnpm --filter yep-ui build && pnpm --filter @yep-ui/preset-theme build && pnpm run -C docs build",
     "play": "pnpm -C playground run dev",
-    "stub": "pnpm -r --filter=./packages/* --parallel run stub"
+    "stub": "pnpm -r --filter=./packages/* --parallel run stub",
+    "lint": "pnpm --filter yep-ui lint",
+    "test": "pnpm --filter yep-ui test"
   },
   "peerDependencies": {
     "vue": "^3.2.0"
@@ -18,6 +21,7 @@
   "devDependencies": {
     "@antfu/eslint-config": "^0.34.1",
     "@types/node": "^18.13.0",
+    "concurrently": "^7.6.0",
     "eslint": "^8.32.0",
     "typescript": "^4.9.4",
     "unbuild": "^1.1.2",

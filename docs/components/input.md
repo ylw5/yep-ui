@@ -1,6 +1,13 @@
 # Input 输入框
 通过鼠标或键盘输入字符
 
+```
+<Input.Group>
+  <Input.Root />
+  <Input.Clear />
+</Input.Group>
+```
+
 :::card 基础用法<Badge type="tip" text="css" />
 `<Root/>` 就是原生 `input` 标签，用法完全一样
 :::code inputBasic

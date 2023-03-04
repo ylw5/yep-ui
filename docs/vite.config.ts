@@ -22,7 +22,7 @@ export default defineConfig({
       imports: [
         'vue',
         {
-          'yep-ui': ['Dialog', 'Checkbox', 'Input', 'Switch', 'RadioGroup'],
+          'yep-ui': ['Dialog', 'Checkbox', 'Input', 'Switch', 'RadioGroup', 'Collapse', 'Select'],
         },
       ],
       cache: true,

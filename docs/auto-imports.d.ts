@@ -5,10 +5,12 @@
 export {}
 declare global {
   const Checkbox: typeof import('yep-ui')['Checkbox']
+  const Collapse: typeof import('yep-ui')['Collapse']
   const Dialog: typeof import('yep-ui')['Dialog']
   const EffectScope: typeof import('vue')['EffectScope']
   const Input: typeof import('yep-ui')['Input']
   const RadioGroup: typeof import('yep-ui')['RadioGroup']
+  const Select: typeof import('yep-ui')['Select']
   const Switch: typeof import('yep-ui')['Switch']
   const computed: typeof import('vue')['computed']
   const createApp: typeof import('vue')['createApp']
@@ -71,10 +73,12 @@ import { UnwrapRef } from 'vue'
 declare module 'vue' {
   interface ComponentCustomProperties {
     readonly Checkbox: UnwrapRef<typeof import('yep-ui')['Checkbox']>
+    readonly Collapse: UnwrapRef<typeof import('yep-ui')['Collapse']>
     readonly Dialog: UnwrapRef<typeof import('yep-ui')['Dialog']>
     readonly EffectScope: UnwrapRef<typeof import('vue')['EffectScope']>
     readonly Input: UnwrapRef<typeof import('yep-ui')['Input']>
     readonly RadioGroup: UnwrapRef<typeof import('yep-ui')['RadioGroup']>
+    readonly Select: UnwrapRef<typeof import('yep-ui')['Select']>
     readonly Switch: UnwrapRef<typeof import('yep-ui')['Switch']>
     readonly computed: UnwrapRef<typeof import('vue')['computed']>
     readonly createApp: UnwrapRef<typeof import('vue')['createApp']>

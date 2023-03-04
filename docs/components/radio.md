@@ -1,5 +1,11 @@
 # Radio 单选框
 在一组备选项中进行单选。
+```
+<RadioGroup.Root>
+  <RadioGroup.Label />
+  <RadioGroup.Option />
+</RadioGroup.Root>
+```
 
 ### CSS
 | 名称        |      类型      | 描述 |

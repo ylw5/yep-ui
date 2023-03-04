@@ -5,7 +5,7 @@ export default defineConfig({
     presetUno(),
     presetThemeDefault(),
     presetIcons({
-      cdn: 'https://esm.sh/',
+      // cdn: 'https://esm.sh/',
       extraProperties: {
         'vertical-align': 'middle',
         'display': 'inline-block',

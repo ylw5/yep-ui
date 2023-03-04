@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { ref } from 'vue'
 const people = [
   { name: 'Wade Cooper' },
   { name: 'Arlene Mccoy' },
@@ -9,15 +8,15 @@ const people = [
   { name: 'Hellen Schmidt' },
 
 ]
-const selectedPerson = ref(people[0])
 </script>
 
 <template>
-  <Select.Root v-model="selectedPerson">
+  <Select.Root :default-value="people[0]" class="relative">
     <Select.Trigger
+      v-slot="{ value }"
       class="input text-left cursor-pointer"
     >
-      {{ selectedPerson.name }}
+      {{ value.name }}
     </Select.Trigger>
 
     <Select.Options

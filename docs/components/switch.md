@@ -1,6 +1,11 @@
 # Switch(Toggle) 开关
 表示在两种状态之间切换值，多用于触发「开/关」；并提供与复选框元素相同的语义和键盘导航。
-
+```
+<Switch.Group>
+  <Switch.Root />
+  <Switch.Label />
+</Switch.Group>
+```
 :::card 基础用法
 
 绑定 `v-model` 到一个 `Boolean` 类型的变量。聚焦时，可以使用空格或回车键来切换状态。

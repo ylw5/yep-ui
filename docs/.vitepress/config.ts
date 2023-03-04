@@ -30,6 +30,7 @@ export default defineConfig({
           items: [
             { text: 'Button 按钮', link: '/components/button' },
             { text: 'Avatar 头像', link: '/components/avatar' },
+            { text: 'Collapse 折叠面板', link: '/components/collapse' },
           ],
         },
         {
@@ -37,6 +38,7 @@ export default defineConfig({
           items: [
             { text: 'RadioGroup 单选框', link: '/components/radio' },
             { text: 'Checkbox 复选框 ', link: '/components/checkbox' },
+            { text: 'Select 选择器', link: '/components/select' },
             { text: 'Input 输入框', link: '/components/input' },
             { text: 'Switch(Toggle) 开关', link: '/components/switch' },
           ],

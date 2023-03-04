@@ -26,7 +26,7 @@ const shortcuts: Exclude<Preset['shortcuts'], undefined | StaticShortcutMap> = [
     'btn-text': 'm-0 p-initial h-initial w-initial border-0 outline-0 rounded-initial bg-transparent z-auto text-center decoration-none text-initial hover:(bg-transparent) focus:(bg-transparent) active:(bg-transparent)',
   },
   // input
-  { input: 'transition w-full flex-grow-1 h-8 px-3 outline-0 px-3 bg-none bg-input-bg box-border b b-solid b-border rounded-sm text-input-text hover:(ring-1 ring-primary) focus:(ring-1 ring-primary)' },
+  { input: 'transition w-full flex-grow-1 min-h-8 px-3 outline-0 px-3 bg-none bg-input-bg box-border b b-solid b-border rounded-sm text-input-text hover:(ring-1 ring-primary) focus:(ring-1 ring-primary)' },
   {
     inputgroup: `
       px-3 inline-flex flex-grow-1 w-full items-center justify-center bg-input-bg bg-none text-input-text b b-solid b-border rounded-sm transform-gpu hover:(ring-1 ring-primary) data-focus:(ring-1 ring-primary) transition
@@ -52,5 +52,9 @@ const shortcuts: Exclude<Preset['shortcuts'], undefined | StaticShortcutMap> = [
   { 'avatar-group': 'flex overflow-hidden [&_.avatar]:(rounded-full overflow-hidden b-2 b-solid b-gray-600)' },
   // radio
   { radio: 'shrink-0 h-6 w-6 cursor-pointer appearance-none rounded-full b-solid b-1 b-border group-data-checked:(shadow-[0_0_0_4px_var(--un-shadow-color)_inset] bg-primary) checked:(shadow-[0_0_0_4px_var(--un-shadow-color)_inset] bg-primary) shadow-white' },
+  // select
+  { 'select-options': 'absolute mt-1 max-h-60 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm  p-1 bg-white z-999' },
+  { 'select-option': 'p-1 data-active:bg-gray-100 data-selected:text-primary cursor-pointer data-disabled:(cursor-not-allowed text-diabled-text) rounded-md' },
+  { tag: 'inline-flex items-center justify-center gap-1 p-.9 px-2 bg-gray-200 dark:bg-gray-800 b b-solid b-border' },
 ]
 export default shortcuts

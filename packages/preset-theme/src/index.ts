@@ -18,6 +18,7 @@ export function presetThemeDefault(options = {}): Preset {
         checked: 'state~="checked"',
         active: 'state~="active"',
         disabled: 'state~="disabled"',
+        selected: 'state~="selected"',
         open: 'state~="open"',
         focus: 'state~="focus"',
       },
@@ -73,7 +74,9 @@ export function presetThemeDefault(options = {}): Preset {
           800: '#820014',
           900: '#5c0011',
         },
-
+        diabled: {
+          text: 'var(--y-text-color-disabled)',
+        },
         border: 'var(--y-border-color)',
         input: {
           bg: 'var(--y-input-bg)',

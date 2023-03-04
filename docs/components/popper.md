@@ -2,7 +2,15 @@
 触发弹出一个气泡框。
 
 可用于 tooltip、popover 等场景。
-
+```
+<Popper.Root>
+  <Popper.Trigger />
+  <Popper.Anchor />
+  <Popper.Panel>
+    <Popper.PanelArrow />
+  </Popper.Panel>
+</Popper.Root>
+```
 :::card 基本用法
 默认触发条件为点击，可以通过 `trigger` 属性来设置触发条件。
 :::code popperBasic

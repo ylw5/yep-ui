@@ -97,34 +97,6 @@ const rules: Preset['rules'] = [
   }, {
     layer: 'components',
   }],
-  // [/^toggle$/, ([, ,], { rawSelector }) => {
-  //   const selector = e(rawSelector)
-  //   return `
-  //     ${selector},
-  //     ${selector}::before {
-  //       position: absolute;
-  //       background: inherit;
-  //     }
-  //     ${selector} {
-  //       visibility: hidden;
-  //       width: .5rem;
-  //       height: .5rem;
-  //       border: 1px solid var(--y-border-color);
-  //     }
-
-  //     ${selector}::before {
-  //       content: '';
-  //       visibility: visible;
-  //       width: inherit;
-  //       height: inherit;
-  //       transform: rotate(45deg);
-  //       border: inherit;
-  //       border-radius: inherit;
-  //     }
-  //   `
-  // }, {
-  //   layer: 'components',
-  // }],
 
 ]
 

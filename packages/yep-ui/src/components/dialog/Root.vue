@@ -1,83 +1,77 @@
 <script setup lang="ts">
-import { computed, onMounted, provide, ref, watch } from 'vue'
+import type { PropType } from 'vue'
+import { computed, inject, onMounted, provide, ref, watch } from 'vue'
 import type { DialogContext } from '../../tokens'
-import { dialogInjectionKey } from '../../tokens'
+import { DialogStates, dialogInjectionKey } from '../../tokens'
 import { isInFocusableElement } from '../../utils'
-import { useOutsideClick } from '../../composables'
-const props = withDefaults(defineProps<{
-  modelValue?: boolean
-  modal?: boolean
-  static?: boolean
-}>(), {
-  modelValue: false,
-  modal: false,
-  static: false,
+import { useControllable, useOutsideClick } from '../../composables'
+const props = defineProps({
+  as: { type: [String, Object], default: 'div' },
+  static: { type: Boolean, default: false },
+  open: { type: Boolean, default: undefined },
+  initialFocus: { type: Object as PropType<HTMLElement | null>, default: null },
 })
-const emit = defineEmits<{
-  (e: 'beforeClose'): void
-  (e: 'beforeOpen'): void
-  (e: 'update:modelValue', value: boolean): void
-}>()
-// const dialog = ref<HTMLDialogElement | null>(null)
+const emit = defineEmits(['open', 'close'])
+const ready = ref(false)
+onMounted(() => ready.value = true)
 
-const dialogState = ref<boolean>(false)
-const panelRef = ref<HTMLDialogElement | null>(null)
+// const nestedDialogCount = ref(0)
 
-const api: DialogContext = {
-  dialogState: computed(() => dialogState.value || props.modelValue),
-  panelRef,
-  close: () => {
-    dialogState.value = false
-    emit('update:modelValue', false)
-    emit('beforeClose')
-  },
-  open: () => {
-    emit('update:modelValue', true)
-    emit('beforeOpen')
-    dialogState.value = true
-  },
-}
-
-provide(dialogInjectionKey, api)
-
-onMounted(() => {
-  watch(() => api.dialogState.value, (open) => {
-    open ? panelOpen() : panelClose()
-  }, {
-    immediate: true,
-  })
-})
-
-function panelOpen() {
-  props.modal ? panelRef.value?.showModal() : panelRef.value?.show()
-  // document.body.style.overflow = 'hidden'
-}
-function panelClose() {
-  panelRef.value?.close()
-  // document.body.style.overflow = 'auto'
-}
-
-// FIXME: nested dialog will cause error: all close
-useOutsideClick(
-  [panelRef],
-  (event, target) => {
-    if (isInFocusableElement(target))
-      return
-
-    api.close()
-  },
-  computed(() => {
-    if (props.static)
-      return false
-    else return api.dialogState.value
-  }),
+const [open, theirOnchange] = useControllable(
+  computed(() => props.open),
+  (value: boolean) => emit(value ? 'open' : 'close', value),
+  computed(() => false),
 )
+
+const internalDialogRef = ref<HTMLDivElement | null>(null)
+const ownerDocument = computed(() => internalDialogRef.value?.ownerDocument)
+
+const dialogState = computed(() =>
+  !ready.value ? DialogStates.Closed : open.value ? DialogStates.Open : DialogStates.Closed,
+)
+const enable = computed(() => dialogState.value === DialogStates.Open)
+
+// const hasNestedDialog = computed(() => nestedDialogCount.value > 1)
+// const hasParentDialog = computed(() => inject(dialogInjectionKey, null) !== null)
+// // care dialog is on top or not if there are multiple dialogs
+// const position = computed(() => (!hasParentDialog.value ? 'leaf' : 'parent'))
+
+const dialogContext: DialogContext = {
+  panelRef: ref(null),
+  triggerRef: ref(null),
+  dialogState,
+  close() {
+    theirOnchange(false)
+  },
+  open() {
+    theirOnchange(true)
+  },
+}
+provide(dialogInjectionKey, dialogContext)
+
+// const outsideClickEnable = computed(() => {
+//   if (!enable.value)
+//     return false
+//   if (hasNestedDialog.value)
+//     return false
+//   return true
+// })
+
+// useOutsideClick(
+//   [internalDialogRef],
+//   (e, target) => {
+//     if (isInFocusableElement(target))
+//       return
+//     dialogContext.close()
+//   },
+//   outsideClickEnable,
+// )
 </script>
 
 <template>
-  <div
-    :data-state="api.dialogState.value ? 'open' : 'close'"
+  <component
+    :is="as"
   >
-    <slot :close="api.close" :open="api.open" />
-  </div>
+    <slot />
+  </component>
 </template>

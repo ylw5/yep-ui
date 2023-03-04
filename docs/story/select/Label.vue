@@ -13,13 +13,15 @@ const selectedPerson = ref(people[0])
 </script>
 
 <template>
-  <Select.Root v-model="selectedPerson">
+  <Select.Root v-model="selectedPerson" class="relative flex items-center">
+    <Select.Label class="mr-2">
+      person:
+    </Select.Label>
     <Select.Trigger
-      class="input text-left cursor-pointer"
+      class="text-left cursor-pointer input"
     >
       {{ selectedPerson.name }}
     </Select.Trigger>
-
     <Select.Options
       as="div"
       class="select-options"
