@@ -6,7 +6,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "pnpm --filter @yep-ui/preset-theme stub && pnpm --filter yep-ui dev",
-
+    "build": "pnpm --filter yep-ui build && pnpm --filter @yep-ui/preset-theme build",
     "serve": "vite preview",
     "docs:dev": "pnpm run -C docs dev",
     "docs:build": "pnpm --filter yep-ui build && pnpm --filter @yep-ui/preset-theme build && pnpm run -C docs build",
