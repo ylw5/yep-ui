@@ -21,9 +21,9 @@
       // "@yep-ui/*": [
       //   "../packages/yep-ui/*"
       // ],
-      // "yep-ui": [
-      //   "../packages/yep-ui"
-      // ]
+      "yep-ui": [
+        "../packages/yep-ui"
+      ]
     }
   },
   "exclude": [

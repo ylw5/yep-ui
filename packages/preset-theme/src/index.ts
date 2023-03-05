@@ -1,11 +1,11 @@
 import fs from 'fs/promises'
 import path from 'path'
-import type { Preset } from '@unocss/core'
+import type { Preset } from 'unocss'
 import rules from './rules'
 import shortcuts from './shortcuts'
 import variants from './variants'
 // TODO: give option for user to customize theme
-export function presetThemeDefault(options = {}): Preset {
+export function presetThemeDefault(): Preset {
   return {
     name: '@yep-ui/preset-theme',
     theme: {
@@ -77,24 +77,18 @@ export function presetThemeDefault(options = {}): Preset {
         diabled: {
           text: 'var(--y-text-color-disabled)',
         },
+        overlay: {
+          bg: 'var(--y-bg-color-overlay)',
+        },
+        fill: {
+          light: 'var(--y-fill-color-light)',
+        },
         border: 'var(--y-border-color)',
         input: {
           bg: 'var(--y-input-bg)',
           text: 'var(--y-input-text)',
         },
       },
-
-      // extend: {
-      //   animation: {
-      //     test: 'popover 1s ease-in-out',
-      //   },
-      //   keyframes: {
-      //     popover: {
-      //       '0%': { transform: 'translate(0, -100%)' },
-      //       '100%': { transform: 'none' },
-      //     },
-      //   },
-      // },
     },
     shortcuts,
     rules,

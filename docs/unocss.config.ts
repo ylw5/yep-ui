@@ -5,7 +5,6 @@ export default defineConfig({
     presetUno(),
     presetThemeDefault(),
     presetIcons({
-      // cdn: 'https://esm.sh/',
       extraProperties: {
         'vertical-align': 'middle',
         'display': 'inline-block',
@@ -20,10 +19,10 @@ export default defineConfig({
   transformers: [
     transformerVariantGroup(),
   ],
-  // configDeps: [
-  //   '../packages/preset-theme/src/shortcuts.ts',
-  //   '../packages/preset-theme/src/rules.ts',
-  //   '../packages/preset-theme/src/variants.ts',
-  //   '../packages/preset-theme/src/index.ts',
-  // ],
+  configDeps: [
+    '../packages/preset-theme/src/shortcuts.ts',
+    '../packages/preset-theme/src/rules.ts',
+    '../packages/preset-theme/src/variants.ts',
+    '../packages/preset-theme/src/index.ts',
+  ],
 })

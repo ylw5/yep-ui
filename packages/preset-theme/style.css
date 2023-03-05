@@ -19,6 +19,9 @@
 
   --y-text-color-placehoder: #a8abb2;
   --y-text-color-disabled: #c0c4cc;
+
+  --y-bg-color-overlay: #ffffff;
+  --y-fill-color-light: #f5f7fa;
 }
 :root.dark{
   --y-primary: #409EFF;
@@ -36,6 +39,9 @@
 
   --y-text-color-placehoder: #8D9095;
   --y-text-color-disabled: #6C6E72;
+
+  --y-bg-color-overlay: #1d1e1f;
+  --y-fill-color-light: #262727;
 }
 
 [data-state~="diabled"],

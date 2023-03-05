@@ -1,5 +1,5 @@
-import { toEscapedSelector as e } from '@unocss/core'
-import type { Preset } from '@unocss/core'
+import { toEscapedSelector as e } from 'unocss'
+import type { Preset } from 'unocss'
 
 const rules: Preset['rules'] = [
   // mask

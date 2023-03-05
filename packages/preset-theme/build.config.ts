@@ -9,6 +9,6 @@ export default defineBuildConfig({
     emitCJS: true,
   },
   externals: [
-    '@unocss/core',
+    'unocss',
   ],
 })

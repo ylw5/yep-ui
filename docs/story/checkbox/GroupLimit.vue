@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import { ref } from 'vue'
 const checkedCities = ref(['Shanghai', 'Beijing'])
 const cities = ['Shanghai', 'Beijing', 'Guangzhou', 'Shenzhen']
 </script>

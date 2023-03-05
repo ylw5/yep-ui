@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { ref } from 'vue'
 const checkedfruits = ref(['apple', 'banana'])
 const fruits = ['apple', 'banana', 'orange']
 </script>
