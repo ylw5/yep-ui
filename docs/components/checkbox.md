@@ -9,6 +9,13 @@
 </Checkbox.Group>
 ```
 
+### CSS
+| 名称        |      类型      | 描述 |
+| ------------- | :-----------: | ----: |
+| checkbox     | `Component` | 复选框按钮 |
+| indicator     | `Component` | 复选框提示器 |
+...
+
 :::card 基础用法
 表示两种状态之间的切换。
 

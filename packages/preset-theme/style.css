@@ -56,19 +56,7 @@ body{
   min-height: 100%;
 
 }
-body:has(dialog[open]){
-  overflow: hidden !important;
-  overscroll-behavior: contain;
-  position: relative !important;
-  padding-left: 8px;
-  padding-top: 8px;
-  padding-right: 8px;
-  margin-left: 0;
-  margin-top: 0;
 
-  /* : make body don't move when dialog open */
-  margin-right: 17px !important; 
-}
 
 button, input, optgroup, select, textarea {
   font-family: inherit;
@@ -113,4 +101,58 @@ button, input, optgroup, select, textarea {
   --handleoffsetcalculator: var(--handleoffset);
   --un-border-opacity: 1;
   --un-bg-opacity: 1;
+}
+
+
+.with-tooltip {
+  position: relative;
+}
+
+.with-tooltip::before {
+  content: attr(data-tooltip-text);
+  opacity: 0;
+  position: absolute;
+  transition: opacity .5s;
+  color: #ffffff;
+  text-align: center;
+  padding: 5px;
+  font-size: 10px;
+  border-radius: 2px;
+  min-width: 120px;
+  background-color: #5e5d5d;
+  pointer-events: none;
+  z-index: 10;
+}
+
+
+
+.with-tooltip:hover::before,
+.with-tooltip:hover::after,
+.with-tooltip:focus::before,
+.with-tooltip:focus::after {
+  opacity: 1;
+}
+
+[data-tooltip-position^='top']::before {
+  bottom: calc(100% + 7px);
+  right: 0;
+  transform: translateX(50%);
+}
+
+[data-tooltip-position^='bottom']::before {
+  top: calc(100% + 7px);
+  left: 0;
+  transform: translateX(-25%);
+}
+
+[data-tooltip-position^='left']::before {
+  right: calc(100% + 7px);
+  top: 50%;
+  translate: 0 -50%;
+}
+
+[data-tooltip-position^='right']::before {
+  left: calc(100% + 7px);
+  top: 50%;
+  translate: 0 -50%;
 }

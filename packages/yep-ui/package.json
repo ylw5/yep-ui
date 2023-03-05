@@ -4,9 +4,8 @@
   "version": "0.0.1",
   "description": "A Component Library for Vue 3",
   "sideEffects": false,
-  "main": "./dist/yep-ui.umd.cjs",
-  "module": "./dist/yep-ui.js",
-  "types": "./dist/types",
+  "main": "dist/yep-ui.umd.js",
+  "module": "dist/yep-ui.js",
   "files": [
     "dist",
     "volar.d.ts"

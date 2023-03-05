@@ -46,7 +46,8 @@ export default defineConfig({
         {
           text: '反馈组件',
           items: [
-            { text: 'Popover 弹出框 ', link: '/components/popper' },
+            { text: 'Popper 弹出框 ', link: '/components/popper' },
+            { text: 'Tooltip 弹出提示 ', link: '/components/tooltip' },
           ],
         },
       ],

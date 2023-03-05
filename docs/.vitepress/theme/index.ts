@@ -1,7 +1,8 @@
 import DefaultTheme from 'vitepress/theme'
 import 'uno.css'
+import { TooltipDirection } from 'yep-ui'
 import Demo from '../../components/Demo.vue'
-// import './style.css'
+import './style.css'
 
 export default {
   ...DefaultTheme,
@@ -29,5 +30,6 @@ export default {
     // }
 
     app.component('Demo', Demo)
+    app.directive('tooltip', TooltipDirection)
   },
 }

@@ -1,7 +1,3 @@
-<script setup lang="ts">
-// import { ref } from 'vue'
-</script>
-
 <template>
   <div class="h-full flex items-center justify-center gap-7">
     <button v-tooltip="{ text: 'I am top tolltip', position: 'top' }">
@@ -18,7 +14,3 @@
     </button>
   </div>
 </template>
-
-<style>
-
-</style>

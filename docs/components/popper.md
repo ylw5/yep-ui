@@ -2,6 +2,15 @@
 触发弹出一个气泡框。
 
 可用于 tooltip、popover 等场景。
+
+### CSS
+| 名称        |      类型      | 描述 |
+| ------------- | :-----------: | ----: |
+| popper-panel     | `Component` | 弹出框主体 |
+| popper-arrow     | `Component` | 弹出框箭头 |
+...
+
+
 ```
 <Popper.Root>
   <Popper.Trigger />
