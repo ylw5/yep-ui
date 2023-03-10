@@ -5,7 +5,8 @@
     "paths": {
       // "@yep-ui/*": ["../packages/yep-ui/*"],
       // "yep-ui": ["../packages/yep-ui"]
-    }
+    },
+    "types": ["yep-ui/volar"]
   },
   "exclude": ["**/dist/**"],
   "include": ["**/*.ts", "**/*.d.ts", "**/*.vue", "vite.config.ts"]

@@ -1,15 +1,12 @@
 {
   "name": "yep-ui",
   "type": "module",
-  "version": "0.0.1",
+  "version": "0.0.7",
   "description": "A Component Library for Vue 3",
   "sideEffects": false,
-  "main": "dist/yep-ui.umd.js",
-  "module": "dist/yep-ui.js",
-  "files": [
-    "dist",
-    "volar.d.ts"
-  ],
+  "main": "yep-ui.js",
+  "module": "yep-ui.umd.js",
+  "types": "types",
   "scripts": {
     "dev": "concurrently \"vite build --watch\" \"vue-tsc  --declaration --emitDeclarationOnly --watch\"",
     "build": "vite build && vue-tsc --declaration --emitDeclarationOnly",

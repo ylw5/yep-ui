@@ -3,6 +3,7 @@
 </script>
 
 <template>
+  <Checkbox.Root />
   <div class="h-full flex items-center justify-center gap-7">
     <button v-tooltip="{ text: 'I am top tolltip', position: 'top' }">
       top
