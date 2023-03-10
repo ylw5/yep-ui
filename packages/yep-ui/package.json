@@ -1,7 +1,7 @@
 {
   "name": "yep-ui",
   "type": "module",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "A Component Library for Vue 3",
   "sideEffects": false,
   "main": "yep-ui.js",
