@@ -7,6 +7,7 @@ const props = defineProps({
   diabled: { type: Boolean, default: false },
   id: { type: String, default: () => `yep-collapse-trigger-${useId()}` },
 })
+
 const collapseContext = inject(CollapseContextInjectionKey, null)
 if (!collapseContext)
   throw new Error('CollapseTrigger must be used inside CollapseRoot')

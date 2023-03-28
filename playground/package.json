@@ -6,7 +6,7 @@
   },
   "dependencies": {
     "@yep-ui/preset-theme": "workspace:*",
-    "vue": "^3.2.47",
+    "vue": "^3.2.45",
     "yep-ui": "workspace:*"
   },
   "devDependencies": {

@@ -5,20 +5,24 @@
   "description": "A Component Library for Vue 3",
   "sideEffects": false,
   "main": "yep-ui.js",
-  "module": "yep-ui.umd.js",
+  "module": "yep-ui.umd.cjs",
   "types": "types",
   "scripts": {
     "dev": "concurrently \"vite build --watch\" \"vue-tsc  --declaration --emitDeclarationOnly --watch\"",
     "build": "vite build && vue-tsc --declaration --emitDeclarationOnly",
+    "build:components": "node ./commands/index.js build",
+    "release": "node ./commands/index.js release",
     "lint": "eslint . --fix",
     "test": "vitest"
   },
   "dependencies": {
-    "@popperjs/core": "^2.11.6"
+    "@popperjs/core": "^2.11.6",
+    "vue": "^3.2"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.0.0",
     "@vitejs/plugin-vue-jsx": "^3.0.0",
+    "commander": "^10.0.0",
     "jsdom": "^21.1.0",
     "unplugin-auto-import": "^0.15.0",
     "unplugin-vue-components": "^0.24.0"

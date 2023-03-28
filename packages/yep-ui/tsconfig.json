@@ -15,9 +15,12 @@
       "esnext",
       "dom"
     ],
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "declaration": true,
+    "declarationDir": "dist/types"
   },
   "include": [
+    "commands/**/*.*",
     "src/**/*.ts",
     "src/**/**/*.ts",
     "src/**/**/*.vue",
