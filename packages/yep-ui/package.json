@@ -1,19 +1,21 @@
 {
   "name": "yep-ui",
   "type": "module",
-  "version": "0.0.8",
+  "version": "0.0.14",
   "description": "A Component Library for Vue 3",
   "sideEffects": false,
-  "main": "yep-ui.js",
-  "module": "yep-ui.umd.cjs",
-  "types": "types",
+  "main": "yep-ui.umd.cjs",
+  "module": "yep-ui.js",
   "scripts": {
-    "dev": "concurrently \"vite build --watch\" \"vue-tsc  --declaration --emitDeclarationOnly --watch\"",
-    "build": "vite build && vue-tsc --declaration --emitDeclarationOnly",
+    "build:lib": "pnpm build:components && pnpm build:components:dts",
     "build:components": "node ./commands/index.js build",
+    "build:components:dts": "vue-tsc --declaration --emitDeclarationOnly",
     "release": "node ./commands/index.js release",
     "lint": "eslint . --fix",
     "test": "vitest"
+  },
+  "peerDependencies": {
+    "vue": "^3.2"
   },
   "dependencies": {
     "@popperjs/core": "^2.11.6",
@@ -24,6 +26,7 @@
     "@vitejs/plugin-vue-jsx": "^3.0.0",
     "commander": "^10.0.0",
     "jsdom": "^21.1.0",
+    "shelljs": "^0.8.5",
     "unplugin-auto-import": "^0.15.0",
     "unplugin-vue-components": "^0.24.0"
   }

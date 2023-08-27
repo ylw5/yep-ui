@@ -63,9 +63,8 @@ const createPackageJson = (name) => {
     "version": "0.0.0",
     "main": "index.umd.js",
     "module": "index.js",
-    "types": "../types/components/${name}/index.d.ts",
+    "types": "../types/components/${name}/index.d.ts"
   }`
-  console.log(fileStr)
 
   fs.writeFile(path.resolve(outputDir, name, 'package.json'), fileStr, (err) => {
     if (err)
@@ -80,7 +79,7 @@ export async function buildComponents() {
 
   for (const file of files) {
     if (fs.statSync(path.resolve(entryDir, file)).isDirectory()) {
-      buildSingle(file)
+      await buildSingle(file)
       createPackageJson(file)
     }
   }

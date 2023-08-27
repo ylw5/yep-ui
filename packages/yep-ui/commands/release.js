@@ -1,29 +1,26 @@
 import path from 'path'
-import fs from 'fs'
+import fs from 'fs/promises'
 import { fileURLToPath } from 'url'
-// const { default: outPackage } = await import('../package.json', {
-//   assert: { type: 'json' },
-// })
+import shell from 'shelljs'
 const __dirname = fileURLToPath(import.meta.url)
 const outputDir = path.resolve(__dirname, '../../dist')
-
-// const getVersion = (version) => {
-//   if (version) {
-//     return version
-//   }
-//   else {
-//     const versionNums = outPackage.version.split('.')
-//     return versionNums.map((num, index) => index === versionNums.length - 1 ? num + 1 : num).join('.')
-//   }
-// }
-
+const generateIndexDts = async () => {
+  const fileStr = 'export * from \'./types/index\''
+  await fs.writeFile(path.resolve(outputDir, 'index.d.ts'), fileStr, 'utf-8')
+}
 const createPackageJson = async () => {
-  const fileStr = JSON.stringify(outPackage, null, 2)
-  fs.writeFileSync(path.resolve(outputDir, 'package.json'), fileStr, 'utf-8')
+  const outputPackage = JSON.parse(
+    await fs.readFile(
+      new URL('../package.json', import.meta.url),
+    ),
+  )
+  const fileStr = JSON.stringify(outputPackage, null, 2)
+  await fs.writeFile(path.resolve(outputDir, 'package.json'), fileStr, 'utf-8')
 }
 
-export function release({ version }) {
-  // const versionNum = getVersion(version)
-  // outPackage.version = versionNum
-  createPackageJson(version)
+export async function release({ version }) {
+  await createPackageJson(version)
+  await generateIndexDts()
+  shell.cd(outputDir)
+  shell.exec('npm publish')
 }
