@@ -21,6 +21,7 @@ export default defineConfig({
           text: '快速上手',
           items: [
             { text: '安装', link: '/guide/install' },
+            { text: 'CLI', link: '/guide/CLI' },
           ],
         },
       ],

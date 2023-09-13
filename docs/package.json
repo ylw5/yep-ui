@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@yep-ui/preset-theme": "workspace:*",
+    "class-variance-authority": "^0.7.0",
     "vue": "^3.2.47",
     "yep-ui": "workspace:*"
   },

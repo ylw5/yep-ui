@@ -39,5 +39,8 @@
         "react-dom"
       ]
     }
+  },
+  "dependencies": {
+    "cross-env": "^7.0.3"
   }
 }

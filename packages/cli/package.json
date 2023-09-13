@@ -1,0 +1,38 @@
+{
+  "name": "yep-ui-cli",
+  "version": "0.0.0",
+  "type": "module",
+  "description": "Add components to your apps.",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "main": "./dist/index.cjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "unbuild",
+    "stub": "unbuild --stub",
+    "start:dev": "cross-env COMPONENTS_REGISTRY_URL=http://localhost:4173 node dist/index.cjs",
+    "start": "node dist/index.cjs"
+  },
+  "keywords": [],
+  "author": "ylw",
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "commander": "^10.0.0",
+    "cosmiconfig": "^8.3.4",
+    "node-fetch": "^3.3.2",
+    "ora": "^7.0.1",
+    "prompts": "^2.4.2",
+    "tsconfig-paths": "^4.2.0"
+  },
+  "devDependencies": {
+    "@types/prompts": "^2.4.4",
+    "zod": "^3.22.2"
+  }
+}

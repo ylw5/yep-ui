@@ -1,3 +1,4 @@
+import path from 'path'
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import Inspect from 'vite-plugin-inspect'
@@ -13,6 +14,7 @@ export default defineConfig({
   resolve: {
     alias: {
       'yep-ui': '../packages/yep-ui/src/index.ts',
+      '@': path.resolve(__dirname, './src'),
     },
   },
   plugins: [

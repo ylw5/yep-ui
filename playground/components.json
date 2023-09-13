@@ -1,0 +1,12 @@
+{
+  "style": "default",
+  "uno": {
+    "config": "uno.config.ts",
+    "css": "src/index.css",
+    "baseColor": "slate"
+  },
+  "aliases": {
+    "components": "@/components",
+    "utils": "@/lib/utils"
+  }
+}

@@ -1,13 +1,32 @@
 {
   "extends": "../tsconfig.json",
   "compilerOptions": {
-    "lib": ["esnext", "dom"],
+    "lib": [
+      "esnext",
+      "dom"
+    ],
     "paths": {
-      "@yep-ui/*": ["../packages/yep-ui/*"],
-      "yep-ui": ["../packages/yep-ui/src"]
+      "@yep-ui/*": [
+        "../packages/yep-ui/*"
+      ],
+      "yep-ui": [
+        "../packages/yep-ui/src"
+      ],
+      "@/*": [
+        "./src/*"
+      ]
     },
-    "types": ["yep-ui/volar"]
+    "types": [
+      "yep-ui/volar"
+    ]
   },
-  "exclude": ["**/dist/**"],
-  "include": ["**/*.ts", "**/*.d.ts", "**/*.vue", "vite.config.ts"]
+  "exclude": [
+    "**/dist/**"
+  ],
+  "include": [
+    "**/*.ts",
+    "**/*.d.ts",
+    "**/*.vue",
+    "vite.config.ts"
+  ]
 }

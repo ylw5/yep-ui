@@ -1,0 +1,16 @@
+[
+  {
+    "name": "button",
+    "files": [
+      "ui/button.vue"
+    ],
+    "type": "components:ui"
+  },
+  {
+    "name": "avatar",
+    "files": [
+      "ui/avatar.vue"
+    ],
+    "type": "components:ui"
+  }
+]

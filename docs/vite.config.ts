@@ -12,6 +12,10 @@ export default defineConfig({
       'yep-ui': path.resolve(__dirname, '../packages/yep-ui/src/index.ts'),
     },
   },
+  server: {
+    port: 3002,
+    origin: 'http://127.0.0.1:3002',
+  },
   plugins: [
     Inspect(),
     Unocss(),

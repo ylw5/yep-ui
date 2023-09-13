@@ -2,10 +2,13 @@
   "name": "@yep-ui/playground",
   "private": true,
   "scripts": {
-    "dev": "vite dev"
+    "dev": "vite dev",
+    "cli": "cross-env COMPONENTS_REGISTRY_URL=http://localhost:4173 node ../packages/cli/dist/index.cjs"
   },
   "dependencies": {
+    "@unocss/reset": "^0.55.7",
     "@yep-ui/preset-theme": "workspace:*",
+    "class-variance-authority": "^0.7.0",
     "vue": "^3.2.45",
     "yep-ui": "workspace:*"
   },

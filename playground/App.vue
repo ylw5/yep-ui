@@ -1,22 +1,18 @@
 <script setup lang="ts">
-// import { ref } from 'vue'
+import Button from '@/components/ui/button.vue'
 </script>
 
 <template>
-  <Checkbox.Root />
-  <div class="h-full flex items-center justify-center gap-7">
-    <button v-tooltip="{ text: 'I am top tolltip', position: 'top' }">
-      top
-    </button>
-    <button v-tooltip="{ text: 'I am bottom tolltip', position: 'bottom' }">
-      bottom
-    </button>
-    <button v-tooltip="{ text: 'I am left tolltip', position: 'left' }">
-      left
-    </button>
-    <button v-tooltip="{ text: 'I am right tolltip', position: 'right' }">
-      right
-    </button>
+  <div>
+    <Button>
+      Button
+    </Button>
+    <Button variant="secondary">
+      Secondary
+    </Button>
+    <Button variant="outline">
+      Outline
+    </Button>
   </div>
 </template>
 
